@@ -31,7 +31,7 @@ import { useState, useEffect } from "react";
 export default function Index() {
   const whatsappNumber = "5511999999999"; // Replace with actual WhatsApp number
   const whatsappMessage =
-    "Olá! Tenho interesse nos seus servi��os digitais. Podemos conversar?";
+    "Olá! Tenho interesse nos seus serviços digitais. Podemos conversar?";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   // Smooth scroll function
@@ -466,104 +466,123 @@ export default function Index() {
       {/* About Section */}
       <section
         id="sobre"
-        className="py-24 bg-gradient-to-br from-gray-50 to-blue-50"
+        className="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-6">
-              Sobre mim
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Desenvolvedor apaixonado por criar soluções digitais que
-              transformam negócios
-            </p>
-          </div>
-
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <div className="bg-white rounded-3xl p-8 shadow-lg">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-brand-blue to-brand-purple rounded-full flex items-center justify-center">
-                    <UserCheck className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-brand-dark">
-                    Quem sou eu
-                  </h3>
-                </div>
-                <p className="text-gray-600 leading-relaxed">
-                  Sou Matheus Oliveira, desenvolvedor full-stack com experiência
-                  em criar soluções digitais que realmente fazem a diferença.
-                  Minha paixão é transformar ideias em realidade através da
-                  tecnologia, sempre priorizando a qualidade e a satisfação do
-                  cliente.
+            {/* Left Column - Content */}
+            <div className="space-y-8">
+              {/* Header Badge */}
+              <div className="flex items-center gap-2 text-blue-400 text-sm font-medium">
+                <Star className="w-4 h-4" />
+                <span>Sobre o Desenvolvedor</span>
+              </div>
+
+              {/* Main Title */}
+              <div className="space-y-4">
+                <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                  Excelência em
+                  <br />
+                  desenvolvimento há mais de{" "}
+                  <span className="text-blue-400">3 anos</span>
+                </h2>
+
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  Matheus Oliveira é um desenvolvedor especializado em soluções
+                  completas de desenvolvimento web, oferecendo serviços de
+                  criação, otimização, manutenção e modernização para ambientes
+                  digitais e comerciais.
+                </p>
+
+                <p className="text-gray-300 leading-relaxed">
+                  Nossa missão é proporcionar o máximo desempenho digital com
+                  eficiência tecnológica, sempre priorizando a qualidade e a
+                  satisfação dos nossos clientes.
                 </p>
               </div>
 
-              <div className="bg-white rounded-3xl p-8 shadow-lg">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-brand-purple to-brand-blue rounded-full flex items-center justify-center">
-                    <Heart className="w-6 h-6 text-white" />
+              {/* Features Grid */}
+              <div className="grid grid-cols-2 gap-6">
+                <div className="flex items-center gap-3 text-gray-300">
+                  <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center">
+                    <Check className="w-4 h-4 text-blue-400" />
                   </div>
-                  <h3 className="text-xl font-bold text-brand-dark">
-                    Minha Missão
-                  </h3>
+                  <span className="text-sm">Desenvolvimento profissional</span>
                 </div>
-                <p className="text-gray-600 leading-relaxed">
-                  Acredito que todo negócio, independente do tamanho, merece uma
-                  presença digital profissional e eficaz. Por isso, trabalho
-                  para democratizar o acesso à tecnologia de qualidade,
-                  oferecendo soluções personalizadas com preços justos e
-                  atendimento humanizado.
-                </p>
+
+                <div className="flex items-center gap-3 text-gray-300">
+                  <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center">
+                    <Check className="w-4 h-4 text-blue-400" />
+                  </div>
+                  <span className="text-sm">
+                    Manutenção preventiva e corretiva
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3 text-gray-300">
+                  <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center">
+                    <Check className="w-4 h-4 text-blue-400" />
+                  </div>
+                  <span className="text-sm">
+                    Otimização completa dos sistemas
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3 text-gray-300">
+                  <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center">
+                    <Check className="w-4 h-4 text-blue-400" />
+                  </div>
+                  <span className="text-sm">SEO conforme legislação</span>
+                </div>
+
+                <div className="flex items-center gap-3 text-gray-300">
+                  <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center">
+                    <Check className="w-4 h-4 text-blue-400" />
+                  </div>
+                  <span className="text-sm">
+                    Consultoria técnica especializada
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3 text-gray-300">
+                  <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center">
+                    <Check className="w-4 h-4 text-blue-400" />
+                  </div>
+                  <span className="text-sm">Suporte 24/7 para emergências</span>
+                </div>
               </div>
             </div>
 
-            <div className="space-y-6">
-              <div className="bg-white rounded-3xl p-8 shadow-lg">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-whatsapp to-brand-blue rounded-full flex items-center justify-center">
-                    <Briefcase className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-brand-dark">
-                    Experiência
-                  </h3>
-                </div>
-                <ul className="space-y-3 text-gray-600">
-                  <li className="flex items-center gap-3">
-                    <Check className="w-4 h-4 text-whatsapp flex-shrink-0" />
-                    <span>+3 anos desenvolvendo para web</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <Check className="w-4 h-4 text-whatsapp flex-shrink-0" />
-                    <span>Especialista em React, Node.js e TypeScript</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <Check className="w-4 h-4 text-whatsapp flex-shrink-0" />
-                    <span>Projetos entregues para diversos segmentos</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <Check className="w-4 h-4 text-whatsapp flex-shrink-0" />
-                    <span>Foco em performance e experiência do usuário</span>
-                  </li>
-                </ul>
-              </div>
+            {/* Right Column - Image */}
+            <div className="relative">
+              <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-blue-500/10 to-purple-500/10 p-8">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F9b25c0eb5264438ba3206d29884955df?format=webp&width=800"
+                  alt="Matheus Oliveira trabalhando"
+                  className="w-full h-96 object-cover rounded-2xl"
+                />
 
-              <div className="bg-gradient-to-r from-brand-blue to-brand-purple rounded-3xl p-8 text-white">
-                <h3 className="text-xl font-bold mb-4">
-                  Vamos trabalhar juntos?
-                </h3>
-                <p className="mb-6 text-white/90">
-                  Estou sempre pronto para novos desafios e projetos que façam a
-                  diferença. Entre em contato e vamos transformar sua ideia em
-                  realidade!
-                </p>
-                <Button
-                  className="bg-whatsapp hover:bg-whatsapp/90 text-white"
-                  onClick={() => window.open(whatsappUrl, "_blank")}
-                >
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Falar comigo
-                </Button>
+                {/* Floating Certifications Card */}
+                <div className="absolute bottom-4 left-4 bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-blue-500/20">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                      <Award className="w-4 h-4 text-white" />
+                    </div>
+                    <h3 className="text-white font-semibold">Certificações</h3>
+                  </div>
+                  <p className="text-gray-300 text-sm mb-3">
+                    Técnico certificado e equipamentos homologados
+                  </p>
+                  <div className="flex items-center gap-1">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star
+                        key={star}
+                        className="w-4 h-4 text-yellow-400 fill-current"
+                      />
+                    ))}
+                    <span className="text-yellow-400 text-sm ml-2">5.0</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1139,7 +1158,7 @@ export default function Index() {
           </h2>
 
           <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto">
-            Transforme sua presen��a digital hoje mesmo. Resultados garantidos
+            Transforme sua presença digital hoje mesmo. Resultados garantidos
             com tecnologia e preço justo.
           </p>
 
