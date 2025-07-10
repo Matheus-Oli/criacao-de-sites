@@ -156,23 +156,43 @@ export default function Index() {
       image: "/placeholder.svg",
       description:
         "Sistema completo de controle de estoque e agendamento para barbearia",
+      category: "Sistema Web",
+      technologies: ["React", "Node.js", "PostgreSQL"],
+      features: [
+        "Agendamento online",
+        "Controle de estoque",
+        "Relatórios financeiros",
+      ],
+      status: "Concluído",
     },
     {
       name: "Landing Page Imobiliária",
       image: "/placeholder.svg",
       description:
         "Página de vendas para lançamento de empreendimento residencial",
+      category: "Landing Page",
+      technologies: ["React", "Tailwind", "TypeScript"],
+      features: ["Design responsivo", "Formulários integrados", "Analytics"],
+      status: "Concluído",
     },
     {
       name: "Site Restaurante Gourmet",
       image: "/placeholder.svg",
       description:
         "Site institucional com cardápio digital e sistema de reservas",
+      category: "Site Institucional",
+      technologies: ["React", "Strapi", "MySQL"],
+      features: ["Cardápio digital", "Sistema de reservas", "Galeria de fotos"],
+      status: "Concluído",
     },
     {
       name: "E-commerce Fashion",
       image: "/placeholder.svg",
       description: "Loja virtual completa com integração de pagamentos",
+      category: "E-commerce",
+      technologies: ["Next.js", "Stripe", "MongoDB"],
+      features: ["Carrinho de compras", "Pagamentos online", "Painel admin"],
+      status: "Concluído",
     },
   ];
 
@@ -466,96 +486,98 @@ export default function Index() {
       {/* About Section */}
       <section
         id="sobre"
-        className="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"
+        className="py-24 bg-gradient-to-br from-gray-50 to-blue-50"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-6">
+              Sobre mim
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Desenvolvedor apaixonado por criar soluções digitais que
+              transformam negócios
+            </p>
+          </div>
+
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Column - Content */}
             <div className="space-y-8">
               {/* Header Badge */}
-              <div className="flex items-center gap-2 text-blue-400 text-sm font-medium">
+              <div className="flex items-center gap-2 text-brand-blue text-sm font-medium">
                 <Star className="w-4 h-4" />
-                <span>Sobre o Desenvolvedor</span>
+                <span>Excelência em desenvolvimento</span>
               </div>
 
               {/* Main Title */}
               <div className="space-y-4">
-                <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                  Excelência em
-                  <br />
-                  desenvolvimento há mais de{" "}
-                  <span className="text-blue-400">3 anos</span>
-                </h2>
+                <h3 className="text-3xl md:text-4xl font-bold text-brand-dark leading-tight">
+                  Mais de <span className="text-brand-blue">3 anos</span>{" "}
+                  criando soluções digitais
+                </h3>
 
-                <p className="text-lg text-gray-300 leading-relaxed">
+                <p className="text-lg text-gray-600 leading-relaxed">
                   Matheus Oliveira é um desenvolvedor especializado em soluções
                   completas de desenvolvimento web, oferecendo serviços de
                   criação, otimização, manutenção e modernização para ambientes
                   digitais e comerciais.
                 </p>
 
-                <p className="text-gray-300 leading-relaxed">
-                  Nossa missão é proporcionar o máximo desempenho digital com
+                <p className="text-gray-600 leading-relaxed">
+                  Minha missão é proporcionar o máximo desempenho digital com
                   eficiência tecnológica, sempre priorizando a qualidade e a
-                  satisfação dos nossos clientes.
+                  satisfação dos clientes.
                 </p>
               </div>
 
               {/* Features Grid */}
               <div className="grid grid-cols-2 gap-6">
-                <div className="flex items-center gap-3 text-gray-300">
-                  <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center">
-                    <Check className="w-4 h-4 text-blue-400" />
+                <div className="flex items-center gap-3 text-gray-600">
+                  <div className="w-8 h-8 bg-brand-blue/10 rounded-full flex items-center justify-center">
+                    <Check className="w-4 h-4 text-brand-blue" />
                   </div>
                   <span className="text-sm">Desenvolvimento profissional</span>
                 </div>
 
-                <div className="flex items-center gap-3 text-gray-300">
-                  <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center">
-                    <Check className="w-4 h-4 text-blue-400" />
+                <div className="flex items-center gap-3 text-gray-600">
+                  <div className="w-8 h-8 bg-brand-blue/10 rounded-full flex items-center justify-center">
+                    <Check className="w-4 h-4 text-brand-blue" />
                   </div>
-                  <span className="text-sm">
-                    Manutenção preventiva e corretiva
-                  </span>
+                  <span className="text-sm">Manutenção e suporte</span>
                 </div>
 
-                <div className="flex items-center gap-3 text-gray-300">
-                  <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center">
-                    <Check className="w-4 h-4 text-blue-400" />
+                <div className="flex items-center gap-3 text-gray-600">
+                  <div className="w-8 h-8 bg-brand-blue/10 rounded-full flex items-center justify-center">
+                    <Check className="w-4 h-4 text-brand-blue" />
                   </div>
-                  <span className="text-sm">
-                    Otimização completa dos sistemas
-                  </span>
+                  <span className="text-sm">Otimização completa</span>
                 </div>
 
-                <div className="flex items-center gap-3 text-gray-300">
-                  <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center">
-                    <Check className="w-4 h-4 text-blue-400" />
+                <div className="flex items-center gap-3 text-gray-600">
+                  <div className="w-8 h-8 bg-brand-blue/10 rounded-full flex items-center justify-center">
+                    <Check className="w-4 h-4 text-brand-blue" />
                   </div>
-                  <span className="text-sm">SEO conforme legislação</span>
+                  <span className="text-sm">SEO e performance</span>
                 </div>
 
-                <div className="flex items-center gap-3 text-gray-300">
-                  <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center">
-                    <Check className="w-4 h-4 text-blue-400" />
+                <div className="flex items-center gap-3 text-gray-600">
+                  <div className="w-8 h-8 bg-brand-blue/10 rounded-full flex items-center justify-center">
+                    <Check className="w-4 h-4 text-brand-blue" />
                   </div>
-                  <span className="text-sm">
-                    Consultoria técnica especializada
-                  </span>
+                  <span className="text-sm">Consultoria especializada</span>
                 </div>
 
-                <div className="flex items-center gap-3 text-gray-300">
-                  <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center">
-                    <Check className="w-4 h-4 text-blue-400" />
+                <div className="flex items-center gap-3 text-gray-600">
+                  <div className="w-8 h-8 bg-brand-blue/10 rounded-full flex items-center justify-center">
+                    <Check className="w-4 h-4 text-brand-blue" />
                   </div>
-                  <span className="text-sm">Suporte 24/7 para emergências</span>
+                  <span className="text-sm">Suporte contínuo</span>
                 </div>
               </div>
             </div>
 
             {/* Right Column - Image */}
             <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-blue-500/10 to-purple-500/10 p-8">
+              <div className="relative rounded-3xl overflow-hidden bg-white p-8 shadow-xl">
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F9b25c0eb5264438ba3206d29884955df?format=webp&width=800"
                   alt="Matheus Oliveira trabalhando"
@@ -563,15 +585,17 @@ export default function Index() {
                 />
 
                 {/* Floating Certifications Card */}
-                <div className="absolute bottom-4 left-4 bg-slate-800/90 backdrop-blur-sm rounded-2xl p-6 border border-blue-500/20">
+                <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 shadow-lg">
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-brand-blue rounded-full flex items-center justify-center">
                       <Award className="w-4 h-4 text-white" />
                     </div>
-                    <h3 className="text-white font-semibold">Certificações</h3>
+                    <h3 className="text-brand-dark font-semibold">
+                      Certificações
+                    </h3>
                   </div>
-                  <p className="text-gray-300 text-sm mb-3">
-                    Técnico certificado e equipamentos homologados
+                  <p className="text-gray-600 text-sm mb-3">
+                    Técnico certificado e qualificado
                   </p>
                   <div className="flex items-center gap-1">
                     {[1, 2, 3, 4, 5].map((star) => (
@@ -1039,11 +1063,11 @@ export default function Index() {
             </Badge>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <Card
                 key={index}
-                className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-0 bg-white"
+                className="group overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-200 bg-white"
               >
                 <div className="aspect-video bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 relative overflow-hidden">
                   <img
@@ -1051,17 +1075,79 @@ export default function Index() {
                     alt={project.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <Badge className="absolute top-4 left-4 bg-white/90 text-brand-dark">
+                    {project.category}
+                  </Badge>
+                  <div className="absolute top-4 right-4">
+                    <Badge
+                      className={`${
+                        project.status === "Concluído"
+                          ? "bg-green-500 text-white"
+                          : "bg-yellow-500 text-white"
+                      }`}
+                    >
+                      {project.status}
+                    </Badge>
+                  </div>
                 </div>
-                <CardHeader>
-                  <CardTitle className="text-lg text-brand-dark">
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-xl text-brand-dark mb-2">
                     {project.name}
                   </CardTitle>
-                </CardHeader>
-                <CardContent>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     {project.description}
                   </p>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  {/* Technologies */}
+                  <div className="mb-4">
+                    <h4 className="text-sm font-semibold text-brand-dark mb-2">
+                      Tecnologias:
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, techIndex) => (
+                        <Badge
+                          key={techIndex}
+                          variant="outline"
+                          className="text-xs border-brand-blue text-brand-blue"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Features */}
+                  <div className="mb-4">
+                    <h4 className="text-sm font-semibold text-brand-dark mb-2">
+                      Principais funcionalidades:
+                    </h4>
+                    <ul className="space-y-1">
+                      {project.features.map((feature, featureIndex) => (
+                        <li
+                          key={featureIndex}
+                          className="flex items-center gap-2 text-sm text-gray-600"
+                        >
+                          <Check className="w-3 h-3 text-whatsapp flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* CTA Button */}
+                  <Button
+                    className="w-full bg-brand-blue hover:bg-brand-purple text-white transition-all duration-300"
+                    onClick={() => {
+                      const message = `Olá! Vi o projeto "${project.name}" no seu portfólio e gostaria de conversar sobre um projeto similar.`;
+                      const projectWhatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+                      window.open(projectWhatsappUrl, "_blank");
+                    }}
+                  >
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    Projeto similar
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -1197,6 +1283,20 @@ export default function Index() {
           </div>
         </div>
       </footer>
+
+      {/* Floating WhatsApp Button */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <Button
+          onClick={() => window.open(whatsappUrl, "_blank")}
+          className="w-16 h-16 bg-whatsapp hover:bg-whatsapp/90 text-white rounded-full shadow-lg p-0 border-4 border-white"
+        >
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2Fe624acf135944b4f8ca28acc47b39c14?format=webp&width=800"
+            alt="WhatsApp"
+            className="w-10 h-10 rounded-full object-cover"
+          />
+        </Button>
+      </div>
     </div>
   );
 }
