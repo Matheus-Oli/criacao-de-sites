@@ -45,6 +45,53 @@ export default function Index() {
     }
   };
 
+  // Scroll animation hook
+  const useScrollAnimation = () => {
+    const ref = useRef<HTMLDivElement>(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        },
+        { threshold: 0.1 },
+      );
+
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+
+      return () => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      };
+    }, []);
+
+    return { ref, isVisible };
+  };
+
+  // Animation wrapper component
+  const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
+    const { ref, isVisible } = useScrollAnimation();
+
+    return (
+      <div
+        ref={ref}
+        className={`transition-all duration-700 ${
+          isVisible
+            ? "opacity-100 transform translate-y-0"
+            : "opacity-0 transform translate-y-8"
+        }`}
+      >
+        {children}
+      </div>
+    );
+  };
+
   // Typewriter effect
   const words = ["tecnologia", "velocidade", "preço justo", "qualidade"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
