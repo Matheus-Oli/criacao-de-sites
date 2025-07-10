@@ -1124,7 +1124,12 @@ export default function Index() {
       {/* Portfolio Section */}
       <section
         id="portfolio"
-        className="py-24 bg-gradient-to-br from-gray-50 to-blue-50"
+        className="py-24 bg-gradient-to-br from-gray-50 to-blue-50 scroll-animate"
+        style={{
+          opacity: 0,
+          transform: "translateY(30px)",
+          transition: "all 0.6s ease-out",
+        }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
