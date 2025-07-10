@@ -405,7 +405,11 @@ export default function Index() {
                   className="bg-whatsapp hover:bg-whatsapp/90 text-white px-6 py-2 text-base rounded-full shadow-md transform hover:scale-105 transition-all duration-300 font-medium"
                   onClick={() => window.open(whatsappUrl, "_blank")}
                 >
-                  <MessageCircle className="w-4 h-4 mr-2" />
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
+                    alt="WhatsApp"
+                    className="w-4 h-4 mr-2"
+                  />
                   Fale comigo no WhatsApp
                 </Button>
 
