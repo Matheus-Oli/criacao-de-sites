@@ -54,7 +54,9 @@ export default function Index() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("animate-fade-in");
+          const element = entry.target as HTMLElement;
+          element.style.opacity = "1";
+          element.style.transform = "translateY(0)";
         }
       });
     }, observerOptions);
