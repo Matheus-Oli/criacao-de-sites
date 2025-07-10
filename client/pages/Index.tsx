@@ -44,6 +44,62 @@ export default function Index() {
     }
   };
 
+  // Scroll animation hook
+  const useScrollAnimation = (threshold = 0.1) => {
+    const ref = useRef<HTMLDivElement>(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+      const element = ref.current;
+      if (!element) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          setIsVisible(entry.isIntersecting);
+        },
+        {
+          threshold,
+          rootMargin: "50px 0px -50px 0px",
+        },
+      );
+
+      observer.observe(element);
+
+      return () => {
+        observer.unobserve(element);
+      };
+    }, [threshold]);
+
+    return { ref, isVisible };
+  };
+
+  // Animation wrapper component
+  const ScrollFadeIn = ({
+    children,
+    delay = 0,
+    className = "",
+  }: {
+    children: React.ReactNode;
+    delay?: number;
+    className?: string;
+  }) => {
+    const { ref, isVisible } = useScrollAnimation();
+
+    return (
+      <div
+        ref={ref}
+        className={`transition-all duration-700 ease-out ${className}`}
+        style={{
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? "translateY(0px)" : "translateY(30px)",
+          transitionDelay: `${delay}ms`,
+        }}
+      >
+        {children}
+      </div>
+    );
+  };
+
   // Typewriter effect
   const words = ["tecnologia", "velocidade", "preço justo", "qualidade"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
