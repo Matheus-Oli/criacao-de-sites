@@ -25,7 +25,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 export default function Index() {
   const whatsappNumber = "5511999999999"; // Replace with actual WhatsApp number
@@ -628,7 +628,7 @@ export default function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-6">
-              Serviços que Transformam
+              Servi��os que Transformam
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Soluções digitais completas para levar seu negócio ao próximo
