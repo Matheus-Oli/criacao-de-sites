@@ -3,9 +3,7 @@ import {
   Globe,
   Target,
   Cog,
-  img
-                        src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
-                        alt="WhatsApp",
+  MessageCircle,
   Star,
   Check,
   ArrowRight,
@@ -28,7 +26,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 export default function Index() {
   const whatsappNumber = "5511999999999"; // Replace with actual WhatsApp number
@@ -36,7 +34,7 @@ export default function Index() {
     "Olá! Tenho interesse nos seus serviços digitais. Podemos conversar?";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-    // Smooth scroll function
+  // Smooth scroll function
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -45,53 +43,6 @@ export default function Index() {
         block: "start",
       });
     }
-  };
-
-  // Scroll animation hook
-  const useScrollAnimation = () => {
-    const ref = useRef<HTMLDivElement>(null);
-    const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          }
-        },
-        { threshold: 0.1 }
-      );
-
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-
-      return () => {
-        if (ref.current) {
-          observer.unobserve(ref.current);
-        }
-      };
-    }, []);
-
-    return { ref, isVisible };
-  };
-
-  // Animation wrapper component
-  const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
-    const { ref, isVisible } = useScrollAnimation();
-
-    return (
-      <div
-        ref={ref}
-        className={`transition-all duration-700 ${
-          isVisible
-            ? "opacity-100 transform translate-y-0"
-            : "opacity-0 transform translate-y-8"
-        }`}
-      >
-        {children}
-      </div>
-    );
   };
 
   // Typewriter effect
@@ -199,20 +150,26 @@ export default function Index() {
     window.open(serviceWhatsappUrl, "_blank");
   };
 
-    const projects = [
+  const projects = [
     {
       name: "Sistema BarberShop Pro",
       image: "/placeholder.svg",
-      description: "Sistema completo de controle de estoque e agendamento para barbearia",
+      description:
+        "Sistema completo de controle de estoque e agendamento para barbearia",
       category: "Sistema Web",
       technologies: ["React", "Node.js", "PostgreSQL"],
-      features: ["Agendamento online", "Controle de estoque", "Relatórios financeiros"],
+      features: [
+        "Agendamento online",
+        "Controle de estoque",
+        "Relatórios financeiros",
+      ],
       status: "Concluído",
     },
     {
       name: "Landing Page Imobiliária",
       image: "/placeholder.svg",
-      description: "Página de vendas para lançamento de empreendimento residencial",
+      description:
+        "Página de vendas para lançamento de empreendimento residencial",
       category: "Landing Page",
       technologies: ["React", "Tailwind", "TypeScript"],
       features: ["Design responsivo", "Formulários integrados", "Analytics"],
@@ -221,7 +178,8 @@ export default function Index() {
     {
       name: "Site Restaurante Gourmet",
       image: "/placeholder.svg",
-      description: "Site institucional com cardápio digital e sistema de reservas",
+      description:
+        "Site institucional com cardápio digital e sistema de reservas",
       category: "Site Institucional",
       technologies: ["React", "Strapi", "MySQL"],
       features: ["Cardápio digital", "Sistema de reservas", "Galeria de fotos"],
@@ -284,17 +242,17 @@ export default function Index() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-sm border-b border-gray-200/50 sticky top-0 z-50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center h-16 relative">
-            {/* Logo - positioned absolutely to the left */}
-            <div className="absolute left-0">
-              <h1 className="text-xl font-bold bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent">
-                Matheus Oliveira
-              </h1>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <h1 className="text-xl font-bold bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent">
+                  Matheus Oliveira
+                </h1>
+              </div>
             </div>
 
-            {/* Navigation - centered */}
-            <nav className="flex space-x-8">
+            <nav className="hidden md:flex space-x-8">
               <button
                 onClick={() => scrollToSection("sobre")}
                 className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium"
@@ -332,6 +290,8 @@ export default function Index() {
                 Planos
               </button>
             </nav>
+
+            <div className="flex items-center space-x-4"></div>
           </div>
         </div>
       </header>
@@ -384,12 +344,8 @@ export default function Index() {
                     <Clock className="w-4 h-4 text-brand-blue" />
                     <span>Entrega rápida</span>
                   </div>
-                                    <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
-                    <img
-                      src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
-                      alt="WhatsApp"
-                      className="w-4 h-4"
-                    />
+                  <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                    <MessageCircle className="w-4 h-4 text-whatsapp" />
                     <span>Suporte direto</span>
                   </div>
                   <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
@@ -400,15 +356,11 @@ export default function Index() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                                <Button
+                <Button
                   className="bg-whatsapp hover:bg-whatsapp/90 text-white px-6 py-2 text-base rounded-full shadow-md transform hover:scale-105 transition-all duration-300 font-medium"
                   onClick={() => window.open(whatsappUrl, "_blank")}
                 >
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
-                    alt="WhatsApp"
-                    className="w-4 h-4 mr-2"
-                  />
+                  <MessageCircle className="w-4 h-4 mr-2" />
                   Fale comigo no WhatsApp
                 </Button>
 
@@ -531,7 +483,7 @@ export default function Index() {
         </div>
       </section>
 
-                  {/* About Section */}
+      {/* About Section */}
       <section
         id="sobre"
         className="py-24 bg-gradient-to-br from-gray-50 to-blue-50"
@@ -542,7 +494,8 @@ export default function Index() {
               Sobre mim
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Desenvolvedor apaixonado por criar soluções digitais que transformam negócios
+              Desenvolvedor apaixonado por criar soluções digitais que
+              transformam negócios
             </p>
           </div>
 
@@ -558,21 +511,21 @@ export default function Index() {
               {/* Main Title */}
               <div className="space-y-4">
                 <h3 className="text-3xl md:text-4xl font-bold text-brand-dark leading-tight">
-                  Mais de{" "}
-                  <span className="text-brand-blue">3 anos</span>
-                  {" "}criando soluções digitais
+                  Mais de <span className="text-brand-blue">3 anos</span>{" "}
+                  criando soluções digitais
                 </h3>
 
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Matheus Oliveira é um desenvolvedor especializado em soluções completas
-                  de desenvolvimento web, oferecendo serviços de criação, otimização,
-                  manutenção e modernização para ambientes digitais e comerciais.
+                  Matheus Oliveira é um desenvolvedor especializado em soluções
+                  completas de desenvolvimento web, oferecendo serviços de
+                  criação, otimização, manutenção e modernização para ambientes
+                  digitais e comerciais.
                 </p>
 
                 <p className="text-gray-600 leading-relaxed">
                   Minha missão é proporcionar o máximo desempenho digital com
-                  eficiência tecnológica, sempre priorizando a qualidade e a satisfação
-                  dos clientes.
+                  eficiência tecnológica, sempre priorizando a qualidade e a
+                  satisfação dos clientes.
                 </p>
               </div>
 
@@ -637,7 +590,9 @@ export default function Index() {
                     <div className="w-8 h-8 bg-brand-blue rounded-full flex items-center justify-center">
                       <Award className="w-4 h-4 text-white" />
                     </div>
-                    <h3 className="text-brand-dark font-semibold">Certificações</h3>
+                    <h3 className="text-brand-dark font-semibold">
+                      Certificações
+                    </h3>
                   </div>
                   <p className="text-gray-600 text-sm mb-3">
                     Técnico certificado e qualificado
@@ -744,9 +699,7 @@ export default function Index() {
                         }
                       }}
                     >
-                      <img
-                        src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
-                        alt="WhatsApp" className="w-4 h-4 mr-2" />
+                      <MessageCircle className="w-4 h-4 mr-2" />
                       {service.comingSoon ? "Em Breve" : "Contratar"}
                     </Button>
                   </div>
@@ -831,9 +784,7 @@ export default function Index() {
                         }
                       }}
                     >
-                      <img
-                        src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
-                        alt="WhatsApp" className="w-4 h-4 mr-2" />
+                      <MessageCircle className="w-4 h-4 mr-2" />
                       {service.comingSoon ? "Em Breve" : "Contratar"}
                     </Button>
                   </div>
@@ -860,9 +811,7 @@ export default function Index() {
               className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white px-8 py-3 rounded-full transition-all duration-300"
               onClick={() => window.open(whatsappUrl, "_blank")}
             >
-              <img
-                        src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
-                        alt="WhatsApp" className="w-5 h-5 mr-2" />
+              <MessageCircle className="w-5 h-5 mr-2" />
               Conversar no WhatsApp
             </Button>
           </div>
@@ -900,9 +849,7 @@ export default function Index() {
 
             <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300">
               <div className="w-16 h-16 bg-gradient-to-r from-brand-purple to-brand-blue rounded-full flex items-center justify-center mx-auto mb-6">
-                <img
-                        src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
-                        alt="WhatsApp" className="w-8 h-8 text-white" />
+                <MessageCircle className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-brand-dark mb-4">
                 Comunicação Direta
@@ -1116,7 +1063,7 @@ export default function Index() {
             </Badge>
           </div>
 
-                    <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <Card
                 key={index}
@@ -1135,9 +1082,9 @@ export default function Index() {
                   <div className="absolute top-4 right-4">
                     <Badge
                       className={`${
-                        project.status === 'Concluído'
-                          ? 'bg-green-500 text-white'
-                          : 'bg-yellow-500 text-white'
+                        project.status === "Concluído"
+                          ? "bg-green-500 text-white"
+                          : "bg-yellow-500 text-white"
                       }`}
                     >
                       {project.status}
@@ -1155,7 +1102,9 @@ export default function Index() {
                 <CardContent className="pt-0">
                   {/* Technologies */}
                   <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-brand-dark mb-2">Tecnologias:</h4>
+                    <h4 className="text-sm font-semibold text-brand-dark mb-2">
+                      Tecnologias:
+                    </h4>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech, techIndex) => (
                         <Badge
@@ -1171,10 +1120,15 @@ export default function Index() {
 
                   {/* Features */}
                   <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-brand-dark mb-2">Principais funcionalidades:</h4>
+                    <h4 className="text-sm font-semibold text-brand-dark mb-2">
+                      Principais funcionalidades:
+                    </h4>
                     <ul className="space-y-1">
                       {project.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center gap-2 text-sm text-gray-600">
+                        <li
+                          key={featureIndex}
+                          className="flex items-center gap-2 text-sm text-gray-600"
+                        >
                           <Check className="w-3 h-3 text-whatsapp flex-shrink-0" />
                           <span>{feature}</span>
                         </li>
@@ -1191,9 +1145,7 @@ export default function Index() {
                       window.open(projectWhatsappUrl, "_blank");
                     }}
                   >
-                    <img
-                        src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
-                        alt="WhatsApp" className="w-4 h-4 mr-2" />
+                    <MessageCircle className="w-4 h-4 mr-2" />
                     Projeto similar
                   </Button>
                 </CardContent>
@@ -1272,9 +1224,7 @@ export default function Index() {
                 Entrega rápida
               </div>
               <div className="flex items-center gap-2">
-                <img
-                        src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
-                        alt="WhatsApp" className="w-4 h-4 text-whatsapp" />
+                <MessageCircle className="w-4 h-4 text-whatsapp" />
                 Suporte direto no WhatsApp
               </div>
               <div className="flex items-center gap-2">
@@ -1303,9 +1253,7 @@ export default function Index() {
             className="bg-whatsapp hover:bg-whatsapp/90 text-white px-12 py-6 text-xl rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
             onClick={() => window.open(whatsappUrl, "_blank")}
           >
-            <img
-                        src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
-                        alt="WhatsApp" className="w-6 h-6 mr-3" />
+            <MessageCircle className="w-6 h-6 mr-3" />
             Fale comigo agora pelo WhatsApp
           </Button>
 
@@ -1315,7 +1263,7 @@ export default function Index() {
         </div>
       </section>
 
-            {/* Footer */}
+      {/* Footer */}
       <footer className="bg-brand-dark text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
