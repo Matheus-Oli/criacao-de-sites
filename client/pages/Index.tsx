@@ -390,7 +390,11 @@ export default function Index() {
                     <span>Entrega rápida</span>
                   </div>
                   <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
-                    <MessageCircle className="w-4 h-4 text-whatsapp" />
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
+                      alt="WhatsApp"
+                      className="w-4 h-4"
+                    />
                     <span>Suporte direto</span>
                   </div>
                   <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
