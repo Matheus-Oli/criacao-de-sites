@@ -27,6 +27,226 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useState, useEffect } from "react";
 
+// Project Carousel Component
+const ProjectCarousel = ({
+  images,
+  projectName,
+  onImageClick,
+}: {
+  images: string[];
+  projectName: string;
+  onImageClick: (index: number) => void;
+}) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  return (
+    <div className="relative w-full h-full group">
+      <img
+        src={images[currentIndex]}
+        alt={`${projectName} - Imagem ${currentIndex + 1}`}
+        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer"
+        onClick={() => onImageClick(currentIndex)}
+      />
+
+      {/* Navigation arrows */}
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          prevImage();
+        }}
+        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"
+      >
+        <ArrowRight className="w-4 h-4 rotate-180" />
+      </button>
+
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          nextImage();
+        }}
+        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"
+      >
+        <ArrowRight className="w-4 h-4" />
+      </button>
+
+      {/* Dots indicator */}
+      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1 z-20">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={(e) => {
+              e.stopPropagation();
+              setCurrentIndex(index);
+            }}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              index === currentIndex ? "bg-white" : "bg-white/50"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// Full Screen Modal Component
+const ProjectModal = ({
+  project,
+  imageIndex,
+  onClose,
+  onImageChange,
+}: {
+  project: {
+    name: string;
+    images: string[];
+    description: string;
+    category: string;
+    technologies: string[];
+    features: string[];
+    status: string;
+  };
+  imageIndex: number;
+  onClose: () => void;
+  onImageChange: (index: number) => void;
+}) => {
+  const nextImage = () => {
+    onImageChange((imageIndex + 1) % project.images.length);
+  };
+
+  const prevImage = () => {
+    onImageChange(
+      (imageIndex - 1 + project.images.length) % project.images.length,
+    );
+  };
+
+  const handleKeyPress = (e: KeyboardEvent) => {
+    if (e.key === "Escape") onClose();
+    if (e.key === "ArrowLeft") prevImage();
+    if (e.key === "ArrowRight") nextImage();
+  };
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyPress);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+      document.body.style.overflow = "unset";
+    };
+  }, [imageIndex]);
+
+  return (
+    <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+      {/* Close button */}
+      <button
+        onClick={onClose}
+        className="absolute top-4 right-4 text-white p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors z-60"
+      >
+        <X className="w-6 h-6" />
+      </button>
+
+      {/* Image navigation */}
+      <button
+        onClick={prevImage}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors"
+      >
+        <ArrowRight className="w-6 h-6 rotate-180" />
+      </button>
+
+      <button
+        onClick={nextImage}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors"
+      >
+        <ArrowRight className="w-6 h-6" />
+      </button>
+
+      {/* Main content */}
+      <div className="max-w-6xl w-full max-h-[90vh] flex flex-col lg:flex-row gap-6">
+        {/* Image */}
+        <div className="flex-1 relative">
+          <img
+            src={project.images[imageIndex]}
+            alt={`${project.name} - Imagem ${imageIndex + 1}`}
+            className="w-full h-full max-h-[70vh] object-contain rounded-lg"
+          />
+
+          {/* Image counter */}
+          <div className="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+            {imageIndex + 1} / {project.images.length}
+          </div>
+        </div>
+
+        {/* Project info */}
+        <div className="lg:w-80 bg-white rounded-lg p-6 max-h-[70vh] overflow-y-auto">
+          <div className="flex items-center gap-2 mb-4">
+            <Badge className="bg-brand-blue text-white">
+              {project.category}
+            </Badge>
+            <Badge className="bg-green-500 text-white">{project.status}</Badge>
+          </div>
+
+          <h3 className="text-2xl font-bold text-brand-dark mb-4">
+            {project.name}
+          </h3>
+          <p className="text-gray-600 mb-6">{project.description}</p>
+
+          <div className="mb-6">
+            <h4 className="font-semibold text-brand-dark mb-2">Tecnologias:</h4>
+            <div className="flex flex-wrap gap-2">
+              {project.technologies.map((tech, index) => (
+                <Badge key={index} variant="outline" className="text-xs">
+                  {tech}
+                </Badge>
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="font-semibold text-brand-dark mb-2">
+              Funcionalidades:
+            </h4>
+            <ul className="space-y-2">
+              {project.features.map((feature, index) => (
+                <li key={index} className="flex items-center gap-2 text-sm">
+                  <Check className="w-4 h-4 text-green-500" />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Thumbnail navigation */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {project.images.map((image, index) => (
+          <button
+            key={index}
+            onClick={() => onImageChange(index)}
+            className={`w-16 h-10 rounded overflow-hidden transition-all duration-300 ${
+              index === imageIndex
+                ? "ring-2 ring-white"
+                : "opacity-50 hover:opacity-75"
+            }`}
+          >
+            <img
+              src={image}
+              alt={`Thumbnail ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export default function Index() {
   const whatsappNumber = "5511999999999"; // Replace with actual WhatsApp number
   const whatsappMessage =
