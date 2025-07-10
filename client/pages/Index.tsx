@@ -16,6 +16,12 @@ import {
   BarChart3,
   Menu,
   X,
+  Award,
+  UserCheck,
+  Heart,
+  Briefcase,
+  Shield,
+  Lightbulb,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -25,8 +31,19 @@ import { useState, useEffect } from "react";
 export default function Index() {
   const whatsappNumber = "5511999999999"; // Replace with actual WhatsApp number
   const whatsappMessage =
-    "Olá! Tenho interesse nos seus serviços digitais. Podemos conversar?";
+    "Olá! Tenho interesse nos seus servi��os digitais. Podemos conversar?";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+  // Smooth scroll function
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
 
   // Typewriter effect
   const words = ["tecnologia", "velocidade", "preço justo", "qualidade"];
@@ -102,7 +119,7 @@ export default function Index() {
       icon: Users,
       title: "Renovação de Sites",
       description:
-        "Modernize seu site existente com novo design, melhor performance e funcionalidades atualizadas. Mantemos seu conteúdo e melhoramos tudo o que importa.",
+        "Em Breve - Modernize seu site existente com novo design, melhor performance e funcionalidades atualizadas. Mantemos seu conteúdo e melhoramos tudo o que importa.",
       features: [
         "Design moderno",
         "Performance otimizada",
@@ -110,6 +127,7 @@ export default function Index() {
         "Migração segura",
       ],
       popular: false,
+      comingSoon: true,
     },
     {
       icon: Camera,
@@ -209,34 +227,51 @@ export default function Index() {
             <div className="flex items-center">
               <div className="flex-shrink-0">
                 <h1 className="text-xl font-bold bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent">
-                  DigitalPro
+                  Matheus Oliveira
                 </h1>
               </div>
             </div>
 
             <nav className="hidden md:flex space-x-8">
-              <a
-                href="#servicos"
+              <button
+                onClick={() => scrollToSection("sobre")}
+                className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium"
+              >
+                Sobre mim
+              </button>
+              <button
+                onClick={() => scrollToSection("servicos")}
                 className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium"
               >
                 Serviços
-              </a>
-              <a
-                href="#portfolio"
+              </button>
+              <button
+                onClick={() => scrollToSection("diferenciais")}
+                className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium"
+              >
+                Diferenciais
+              </button>
+              <button
+                onClick={() => scrollToSection("certificacoes")}
+                className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium"
+              >
+                Certificações
+              </button>
+              <button
+                onClick={() => scrollToSection("portfolio")}
                 className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium"
               >
                 Portfólio
-              </a>
-              <a
-                href="#planos"
+              </button>
+              <button
+                onClick={() => scrollToSection("planos")}
                 className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium"
               >
                 Planos
-              </a>
+              </button>
             </nav>
 
-            <div className="flex items-center space-x-4">
-            </div>
+            <div className="flex items-center space-x-4"></div>
           </div>
         </div>
       </header>
@@ -301,22 +336,22 @@ export default function Index() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-               <Button
-                className="bg-whatsapp hover:bg-whatsapp/90 text-white px-6 py-2 text-base rounded-full shadow-md transform hover:scale-105 transition-all duration-300 font-medium"
-                onClick={() => window.open(whatsappUrl, "_blank")}
-              >
-                <MessageCircle className="w-4 h-4 mr-2" />
-                Fale comigo no WhatsApp
-              </Button>
+                <Button
+                  className="bg-whatsapp hover:bg-whatsapp/90 text-white px-6 py-2 text-base rounded-full shadow-md transform hover:scale-105 transition-all duration-300 font-medium"
+                  onClick={() => window.open(whatsappUrl, "_blank")}
+                >
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  Fale comigo no WhatsApp
+                </Button>
 
-              <Button
-                variant="outline"
-                className="px-6 py-2 text-base rounded-full border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white transition-all duration-300 bg-white/80 backdrop-blur-sm"
-              >
-                Veja exemplos de projetos
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-
+                <Button
+                  variant="outline"
+                  onClick={() => scrollToSection("portfolio")}
+                  className="px-6 py-2 text-base rounded-full border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white transition-all duration-300 bg-white/80 backdrop-blur-sm"
+                >
+                  Veja exemplos de projetos
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
               </div>
             </div>
 
@@ -428,6 +463,113 @@ export default function Index() {
         </div>
       </section>
 
+      {/* About Section */}
+      <section
+        id="sobre"
+        className="py-24 bg-gradient-to-br from-gray-50 to-blue-50"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-6">
+              Sobre mim
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Desenvolvedor apaixonado por criar soluções digitais que
+              transformam negócios
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-6">
+              <div className="bg-white rounded-3xl p-8 shadow-lg">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-r from-brand-blue to-brand-purple rounded-full flex items-center justify-center">
+                    <UserCheck className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-dark">
+                    Quem sou eu
+                  </h3>
+                </div>
+                <p className="text-gray-600 leading-relaxed">
+                  Sou Matheus Oliveira, desenvolvedor full-stack com experiência
+                  em criar soluções digitais que realmente fazem a diferença.
+                  Minha paixão é transformar ideias em realidade através da
+                  tecnologia, sempre priorizando a qualidade e a satisfação do
+                  cliente.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-3xl p-8 shadow-lg">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-r from-brand-purple to-brand-blue rounded-full flex items-center justify-center">
+                    <Heart className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-dark">
+                    Minha Missão
+                  </h3>
+                </div>
+                <p className="text-gray-600 leading-relaxed">
+                  Acredito que todo negócio, independente do tamanho, merece uma
+                  presença digital profissional e eficaz. Por isso, trabalho
+                  para democratizar o acesso à tecnologia de qualidade,
+                  oferecendo soluções personalizadas com preços justos e
+                  atendimento humanizado.
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <div className="bg-white rounded-3xl p-8 shadow-lg">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-r from-whatsapp to-brand-blue rounded-full flex items-center justify-center">
+                    <Briefcase className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-brand-dark">
+                    Experiência
+                  </h3>
+                </div>
+                <ul className="space-y-3 text-gray-600">
+                  <li className="flex items-center gap-3">
+                    <Check className="w-4 h-4 text-whatsapp flex-shrink-0" />
+                    <span>+3 anos desenvolvendo para web</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Check className="w-4 h-4 text-whatsapp flex-shrink-0" />
+                    <span>Especialista em React, Node.js e TypeScript</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Check className="w-4 h-4 text-whatsapp flex-shrink-0" />
+                    <span>Projetos entregues para diversos segmentos</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Check className="w-4 h-4 text-whatsapp flex-shrink-0" />
+                    <span>Foco em performance e experiência do usuário</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-r from-brand-blue to-brand-purple rounded-3xl p-8 text-white">
+                <h3 className="text-xl font-bold mb-4">
+                  Vamos trabalhar juntos?
+                </h3>
+                <p className="mb-6 text-white/90">
+                  Estou sempre pronto para novos desafios e projetos que façam a
+                  diferença. Entre em contato e vamos transformar sua ideia em
+                  realidade!
+                </p>
+                <Button
+                  className="bg-whatsapp hover:bg-whatsapp/90 text-white"
+                  onClick={() => window.open(whatsappUrl, "_blank")}
+                >
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  Falar comigo
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section id="servicos" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -447,22 +589,28 @@ export default function Index() {
               {services.slice(0, 3).map((service, index) => (
                 <div
                   key={index}
-                  className="group relative bg-white rounded-3xl p-8 border border-gray-100 hover:border-brand-blue/30 transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-y-2 flex flex-col h-full"
-                  onClick={() => handleServiceClick(service.title)}
+                  className={`group relative bg-white rounded-3xl p-8 border border-gray-100 hover:border-brand-blue/30 transition-all duration-300 flex flex-col h-full ${
+                    service.comingSoon
+                      ? "opacity-70 cursor-not-allowed"
+                      : "cursor-pointer hover:shadow-xl hover:-translate-y-2"
+                  }`}
+                  onClick={() =>
+                    !service.comingSoon && handleServiceClick(service.title)
+                  }
                 >
                   {/* Service Icon */}
                   <div className="relative mb-6">
                     <div className="w-16 h-16 bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <service.icon className="w-8 h-8 text-brand-blue group-hover:text-brand-purple transition-colors duration-300" />
                     </div>
-                    {service.badge && (
-                      <Badge className="absolute -top-2 -right-2 bg-yellow-100 text-yellow-700 text-xs px-2 py-1">
-                        {service.badge}
-                      </Badge>
-                    )}
                     {service.popular && (
                       <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-brand-blue to-brand-purple text-white px-3 py-1">
                         Popular
+                      </Badge>
+                    )}
+                    {service.comingSoon && (
+                      <Badge className="absolute -top-2 -right-2 bg-yellow-500 text-white px-3 py-1">
+                        Em Breve
                       </Badge>
                     )}
                   </div>
@@ -495,14 +643,21 @@ export default function Index() {
                   {/* CTA Button - Fixed at bottom with 16px margin */}
                   <div className="mt-auto" style={{ marginBottom: "16px" }}>
                     <Button
-                      className="w-full bg-brand-blue hover:bg-brand-purple text-white rounded-xl transition-all duration-300 group-hover:shadow-lg"
+                      className={`w-full rounded-xl transition-all duration-300 ${
+                        service.comingSoon
+                          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                          : "bg-brand-blue hover:bg-brand-purple text-white group-hover:shadow-lg"
+                      }`}
+                      disabled={service.comingSoon}
                       onClick={(e) => {
                         e.stopPropagation();
-                        handleServiceClick(service.title);
+                        if (!service.comingSoon) {
+                          handleServiceClick(service.title);
+                        }
                       }}
                     >
                       <MessageCircle className="w-4 h-4 mr-2" />
-                      Contratar
+                      {service.comingSoon ? "Em Breve" : "Contratar"}
                     </Button>
                   </div>
 
@@ -519,22 +674,28 @@ export default function Index() {
               {services.slice(3, 5).map((service, index) => (
                 <div
                   key={index + 3}
-                  className="group relative bg-white rounded-3xl p-8 border border-gray-100 hover:border-brand-blue/30 transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-y-2 flex flex-col h-full"
-                  onClick={() => handleServiceClick(service.title)}
+                  className={`group relative bg-white rounded-3xl p-8 border border-gray-100 hover:border-brand-blue/30 transition-all duration-300 flex flex-col h-full ${
+                    service.comingSoon
+                      ? "opacity-70 cursor-not-allowed"
+                      : "cursor-pointer hover:shadow-xl hover:-translate-y-2"
+                  }`}
+                  onClick={() =>
+                    !service.comingSoon && handleServiceClick(service.title)
+                  }
                 >
                   {/* Service Icon */}
                   <div className="relative mb-6">
                     <div className="w-16 h-16 bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <service.icon className="w-8 h-8 text-brand-blue group-hover:text-brand-purple transition-colors duration-300" />
                     </div>
-                    {service.badge && (
-                      <Badge className="absolute -top-2 -right-2 bg-yellow-100 text-yellow-700 text-xs px-2 py-1">
-                        {service.badge}
-                      </Badge>
-                    )}
                     {service.popular && (
                       <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-brand-blue to-brand-purple text-white px-3 py-1">
                         Popular
+                      </Badge>
+                    )}
+                    {service.comingSoon && (
+                      <Badge className="absolute -top-2 -right-2 bg-yellow-500 text-white px-3 py-1">
+                        Em Breve
                       </Badge>
                     )}
                   </div>
@@ -567,14 +728,21 @@ export default function Index() {
                   {/* CTA Button - Fixed at bottom with 16px margin */}
                   <div className="mt-auto" style={{ marginBottom: "16px" }}>
                     <Button
-                      className="w-full bg-brand-blue hover:bg-brand-purple text-white rounded-xl transition-all duration-300 group-hover:shadow-lg"
+                      className={`w-full rounded-xl transition-all duration-300 ${
+                        service.comingSoon
+                          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                          : "bg-brand-blue hover:bg-brand-purple text-white group-hover:shadow-lg"
+                      }`}
+                      disabled={service.comingSoon}
                       onClick={(e) => {
                         e.stopPropagation();
-                        handleServiceClick(service.title);
+                        if (!service.comingSoon) {
+                          handleServiceClick(service.title);
+                        }
                       }}
                     >
                       <MessageCircle className="w-4 h-4 mr-2" />
-                      Contratar
+                      {service.comingSoon ? "Em Breve" : "Contratar"}
                     </Button>
                   </div>
 
@@ -603,6 +771,233 @@ export default function Index() {
               <MessageCircle className="w-5 h-5 mr-2" />
               Conversar no WhatsApp
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Differentials Section */}
+      <section
+        id="diferenciais"
+        className="py-24 bg-gradient-to-br from-gray-50 to-blue-50"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-6">
+              Meus Diferenciais
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              O que me torna único e por que escolher meus serviços
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-brand-blue to-brand-purple rounded-full flex items-center justify-center mx-auto mb-6">
+                <Clock className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-brand-dark mb-4">
+                Entrega Rápida
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Projetos entregues em prazos otimizados sem comprometer a
+                qualidade. Metodologia ágil para resultados eficientes.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-brand-purple to-brand-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                <MessageCircle className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-brand-dark mb-4">
+                Comunicação Direta
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Atendimento personalizado via WhatsApp. Você fala diretamente
+                comigo, sem intermediários ou call centers.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-whatsapp to-brand-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                <Star className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-brand-dark mb-4">
+                Preço Justo
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Tecnologia de qualidade com preços acessíveis. Sem taxas ocultas
+                ou surpresas no orçamento.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-yellow-50 to-purple-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-yellow-500 to-brand-purple rounded-full flex items-center justify-center mx-auto mb-6">
+                <Lightbulb className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-brand-dark mb-4">
+                Soluções Personalizadas
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Cada projeto é único. Desenvolvo soluções sob medida para
+                atender exatamente às suas necessidades específicas.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-brand-blue to-whatsapp rounded-full flex items-center justify-center mx-auto mb-6">
+                <Shield className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-brand-dark mb-4">
+                Suporte Contínuo
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Não abandono você após a entrega. Ofereço suporte técnico e
+                manutenção para garantir que tudo funcione perfeitamente.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-purple-50 to-yellow-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-brand-purple to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <TrendingUp className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-brand-dark mb-4">
+                Resultados Comprovados
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Foco em métricas e resultados reais. Seus projetos são
+                otimizados para conversão e performance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section id="certificacoes" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-6">
+              Certificações
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Conhecimento certificado e sempre atualizado com as melhores
+              práticas do mercado
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                  <Award className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-brand-dark">React Developer</h3>
+                  <p className="text-sm text-gray-600">Meta (Facebook)</p>
+                </div>
+              </div>
+              <p className="text-gray-600 text-sm">
+                Certificação oficial em desenvolvimento React, cobrindo hooks,
+                state management e melhores práticas.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-green-800 rounded-lg flex items-center justify-center">
+                  <Award className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-brand-dark">
+                    Node.js Developer
+                  </h3>
+                  <p className="text-sm text-gray-600">Node.js Foundation</p>
+                </div>
+              </div>
+              <p className="text-gray-600 text-sm">
+                Especialização em desenvolvimento backend com Node.js, APIs
+                RESTful e arquitetura de sistemas.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                  <Award className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-brand-dark">
+                    TypeScript Expert
+                  </h3>
+                  <p className="text-sm text-gray-600">Microsoft Learn</p>
+                </div>
+              </div>
+              <p className="text-gray-600 text-sm">
+                Domínio avançado em TypeScript para desenvolvimento type-safe e
+                código mais robusto.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center">
+                  <Award className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-brand-dark">
+                    AWS Cloud Practitioner
+                  </h3>
+                  <p className="text-sm text-gray-600">Amazon Web Services</p>
+                </div>
+              </div>
+              <p className="text-gray-600 text-sm">
+                Conhecimento em serviços de nuvem AWS para deploy e
+                escalabilidade de aplicações.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-600 rounded-lg flex items-center justify-center">
+                  <Award className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-brand-dark">
+                    Google Analytics
+                  </h3>
+                  <p className="text-sm text-gray-600">Google</p>
+                </div>
+              </div>
+              <p className="text-gray-600 text-sm">
+                Certificação em análise de dados web e otimização de performance
+                de sites.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg flex items-center justify-center">
+                  <Award className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-brand-dark">Scrum Master</h3>
+                  <p className="text-sm text-gray-600">Scrum Alliance</p>
+                </div>
+              </div>
+              <p className="text-gray-600 text-sm">
+                Metodologias ágeis para gestão eficiente de projetos e entregas
+                no prazo.
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-blue to-brand-purple text-white px-8 py-4 rounded-full">
+              <Star className="w-5 h-5" />
+              <span className="font-semibold">
+                Sempre aprendendo e me atualizando com as últimas tecnologias
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -744,7 +1139,7 @@ export default function Index() {
           </h2>
 
           <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto">
-            Transforme sua presença digital hoje mesmo. Resultados garantidos
+            Transforme sua presen��a digital hoje mesmo. Resultados garantidos
             com tecnologia e preço justo.
           </p>
 
@@ -776,8 +1171,8 @@ export default function Index() {
 
             <div className="border-t border-white/20 pt-8">
               <p className="text-white/70 text-sm">
-                © {new Date().getFullYear()} • Desenvolvido com tecnologia moderna • Todos os
-                direitos reservados
+                © {new Date().getFullYear()} • Desenvolvido com tecnologia
+                moderna • Todos os direitos reservados
               </p>
             </div>
           </div>
