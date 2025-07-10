@@ -1241,7 +1241,15 @@ export default function Index() {
       </section>
 
       {/* Pricing Plans Section */}
-      <section id="planos" className="py-24 bg-white">
+      <section
+        id="planos"
+        className="py-24 bg-white scroll-animate"
+        style={{
+          opacity: 0,
+          transform: "translateY(30px)",
+          transition: "all 0.6s ease-out",
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-4">
