@@ -1,0 +1,788 @@
+import {
+  Zap,
+  Globe,
+  Target,
+  Cog,
+  MessageCircle,
+  Star,
+  Check,
+  ArrowRight,
+  Smartphone,
+  Users,
+  TrendingUp,
+  Clock,
+  ShoppingCart,
+  Camera,
+  BarChart3,
+  Menu,
+  X,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useState, useEffect } from "react";
+
+export default function Index() {
+  const whatsappNumber = "5511999999999"; // Replace with actual WhatsApp number
+  const whatsappMessage =
+    "Olá! Tenho interesse nos seus serviços digitais. Podemos conversar?";
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+  // Typewriter effect
+  const words = ["tecnologia", "velocidade", "preço justo", "qualidade"];
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(
+      () => {
+        const current = words[currentWordIndex];
+
+        if (isDeleting) {
+          setCurrentText(current.substring(0, currentText.length - 1));
+        } else {
+          setCurrentText(current.substring(0, currentText.length + 1));
+        }
+
+        if (!isDeleting && currentText === current) {
+          setTimeout(() => setIsDeleting(true), 2000);
+        } else if (isDeleting && currentText === "") {
+          setIsDeleting(false);
+          setCurrentWordIndex((currentWordIndex + 1) % words.length);
+        }
+      },
+      isDeleting ? 100 : 150,
+    );
+
+    return () => clearTimeout(timeout);
+  }, [currentText, isDeleting, currentWordIndex, words]);
+
+  const services = [
+    {
+      icon: Globe,
+      title: "Sites Institucionais",
+      description:
+        "Sites profissionais completos com design moderno, responsivo e otimizado para conversão. Inclui páginas institucionais, formulários de contato e integração com redes sociais.",
+      features: [
+        "Design responsivo",
+        "SEO otimizado",
+        "Formulários integrados",
+        "Painel administrativo",
+      ],
+      popular: false,
+    },
+    {
+      icon: Target,
+      title: "Landing Pages",
+      description:
+        "Páginas de alta conversão focadas em vendas e captação de leads. Design persuasivo com chamadas para ação estratégicas e integração com ferramentas de marketing.",
+      features: [
+        "Alta conversão",
+        "A/B Testing",
+        "Analytics integrado",
+        "Otimização para ads",
+      ],
+      popular: true,
+    },
+    {
+      icon: Cog,
+      title: "Sistemas Personalizados",
+      description:
+        "Desenvolvimento de sistemas sob medida para seu negócio. Desde controle de estoque até plataformas de gestão completas, criamos a solução que você precisa.",
+      features: [
+        "Desenvolvimento custom",
+        "Integração com APIs",
+        "Banco de dados",
+        "Suporte técnico",
+      ],
+      popular: false,
+    },
+    {
+      icon: Users,
+      title: "Renovação de Sites",
+      description:
+        "Modernize seu site existente com novo design, melhor performance e funcionalidades atualizadas. Mantemos seu conteúdo e melhoramos tudo o que importa.",
+      features: [
+        "Design moderno",
+        "Performance otimizada",
+        "Mobile-first",
+        "Migração segura",
+      ],
+      popular: false,
+    },
+    {
+      icon: Camera,
+      title: "Portfólios Profissionais",
+      description:
+        "Websites personalizados para profissionais, artistas e freelancers mostrarem seus trabalhos. Design elegante com galeria otimizada e foco na apresentação dos seus projetos.",
+      features: [
+        "Galeria de projetos",
+        "Design elegante",
+        "SEO otimizado",
+        "Formulário de contato",
+      ],
+      popular: false,
+    },
+  ];
+
+  const handleServiceClick = (serviceTitle: string) => {
+    const message = `Olá! Quero seguir com o serviço: ${serviceTitle}. Podemos conversar sobre os detalhes?`;
+    const serviceWhatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(serviceWhatsappUrl, "_blank");
+  };
+
+  const projects = [
+    {
+      name: "Sistema BarberShop Pro",
+      image: "/placeholder.svg",
+      description:
+        "Sistema completo de controle de estoque e agendamento para barbearia",
+    },
+    {
+      name: "Landing Page Imobiliária",
+      image: "/placeholder.svg",
+      description:
+        "Página de vendas para lançamento de empreendimento residencial",
+    },
+    {
+      name: "Site Restaurante Gourmet",
+      image: "/placeholder.svg",
+      description:
+        "Site institucional com cardápio digital e sistema de reservas",
+    },
+    {
+      name: "E-commerce Fashion",
+      image: "/placeholder.svg",
+      description: "Loja virtual completa com integração de pagamentos",
+    },
+  ];
+
+  const plans = [
+    {
+      name: "Essencial",
+      price: "497",
+      description: "Ideal para começar sua presença digital",
+      features: [
+        "Site institucional responsivo",
+        "Até 5 páginas",
+        "Formulário de contato",
+        "Otimização básica SEO",
+        "Suporte via WhatsApp",
+      ],
+    },
+    {
+      name: "Completo",
+      price: "897",
+      description: "Para negócios que querem se destacar",
+      features: [
+        "Site profissional completo",
+        "Até 10 páginas",
+        "Integração Google Analytics",
+        "Otimização avançada SEO",
+        "Blog integrado",
+        "Suporte prioritário",
+      ],
+      popular: true,
+    },
+    {
+      name: "Avançado",
+      price: "1.497",
+      description: "Solução completa para seu negócio",
+      features: [
+        "Sistema personalizado",
+        "Painel administrativo",
+        "Integração com APIs",
+        "E-commerce básico",
+        "Manutenção mensal",
+        "Suporte 24/7",
+      ],
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
+      {/* Header */}
+      <header className="bg-white/80 backdrop-blur-sm border-b border-gray-200/50 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <h1 className="text-xl font-bold bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent">
+                  DigitalPro
+                </h1>
+              </div>
+            </div>
+
+            <nav className="hidden md:flex space-x-8">
+              <a
+                href="#servicos"
+                className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium"
+              >
+                Serviços
+              </a>
+              <a
+                href="#portfolio"
+                className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium"
+              >
+                Portfólio
+              </a>
+              <a
+                href="#planos"
+                className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium"
+              >
+                Planos
+              </a>
+            </nav>
+
+            <div className="flex items-center space-x-4">
+            </div>
+          </div>
+        </div>
+      </header>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden min-h-[90vh] flex items-center">
+        {/* Animated Background Pattern */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-purple-50/50"></div>
+
+          {/* Floating Geometric Shapes */}
+          <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 rounded-3xl rotate-12"></div>
+          <div className="absolute top-40 right-32 w-24 h-24 bg-gradient-to-br from-brand-purple/15 to-brand-blue/15 rounded-full"></div>
+          <div className="absolute bottom-40 left-40 w-16 h-16 bg-gradient-to-br from-brand-blue/20 to-brand-purple/20 rounded-2xl rotate-45"></div>
+          <div className="absolute bottom-20 right-20 w-20 h-20 bg-gradient-to-br from-brand-purple/10 to-brand-blue/10 rounded-full"></div>
+
+          {/* Grid Pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Column - Content */}
+            <div className="space-y-8 lg:pr-8">
+              <div className="space-y-6">
+                <Badge className="inline-flex items-center bg-gradient-to-r from-brand-blue/10 to-brand-purple/10 text-white border-brand-blue/20 px-6 py-3 text-sm font-medium shadow-lg backdrop-blur-sm">
+                  <Star className="w-4 h-4 mr-2 text-yellow-500" />
+                  Mais barato que o mercado
+                </Badge>
+
+                <div className="space-y-6">
+                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                    <span className="block text-brand-dark">Seu negócio</span>
+                    <span className="block text-brand-dark">
+                      no digital com
+                    </span>
+                    <span className="block bg-gradient-to-r from-brand-blue via-brand-purple to-brand-blue bg-clip-text text-transparent min-h-[1.2em]">
+                      {currentText}
+                      <span className="animate-pulse">|</span>
+                    </span>
+                  </h1>
+
+                  <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl">
+                    Criação de sites, sistemas e páginas para transformar a
+                    presença digital do seu negócio
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-6 text-sm text-gray-600">
+                  <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                    <Clock className="w-4 h-4 text-brand-blue" />
+                    <span>Entrega rápida</span>
+                  </div>
+                  <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                    <MessageCircle className="w-4 h-4 text-whatsapp" />
+                    <span>Suporte direto</span>
+                  </div>
+                  <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                    <Star className="w-4 h-4 text-yellow-500" />
+                    <span>Pagamento facilitado</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+               <Button
+                className="bg-whatsapp hover:bg-whatsapp/90 text-white px-6 py-2 text-base rounded-full shadow-md transform hover:scale-105 transition-all duration-300 font-medium"
+                onClick={() => window.open(whatsappUrl, "_blank")}
+              >
+                <MessageCircle className="w-4 h-4 mr-2" />
+                Fale comigo no WhatsApp
+              </Button>
+
+              <Button
+                variant="outline"
+                className="px-6 py-2 text-base rounded-full border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white transition-all duration-300 bg-white/80 backdrop-blur-sm"
+              >
+                Veja exemplos de projetos
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+
+              </div>
+            </div>
+
+            {/* Right Column - Creative Visual */}
+            <div className="relative lg:block hidden">
+              <div className="relative max-w-lg mx-auto">
+                {/* Main Feature Cards Stack */}
+                <div className="relative space-y-6">
+                  {/* Top Card - Website Preview */}
+                  <div className="transform rotate-2 bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl p-6 border border-gray-200/50 hover:rotate-0 transition-transform duration-500">
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="flex space-x-1">
+                        <div className="w-2 h-2 rounded-full bg-red-400"></div>
+                        <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
+                        <div className="w-2 h-2 rounded-full bg-green-400"></div>
+                      </div>
+                      <div className="text-xs text-gray-500 ml-auto">
+                        seusite.com.br
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="h-4 bg-gradient-to-r from-brand-blue to-brand-purple rounded w-3/4"></div>
+                      <div className="h-2 bg-gray-200 rounded w-full"></div>
+                      <div className="h-2 bg-gray-200 rounded w-2/3"></div>
+                      <div className="grid grid-cols-3 gap-2 mt-4">
+                        <div className="h-12 bg-brand-blue/20 rounded"></div>
+                        <div className="h-12 bg-brand-purple/20 rounded"></div>
+                        <div className="h-12 bg-whatsapp/20 rounded"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Middle Card - Analytics */}
+                  <div className="transform -rotate-3 bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl p-6 border border-gray-200/50 hover:rotate-0 transition-transform duration-500 relative z-10">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="font-semibold text-gray-800 flex items-center gap-2">
+                        <TrendingUp className="w-4 h-4 text-whatsapp" />
+                        Resultados
+                      </h3>
+                      <Badge className="bg-whatsapp/10 text-whatsapp text-xs">
+                        +127%
+                      </Badge>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-brand-blue">
+                          2.4k
+                        </div>
+                        <div className="text-xs text-gray-500">Visitantes</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-brand-purple">
+                          89
+                        </div>
+                        <div className="text-xs text-gray-500">Conversões</div>
+                      </div>
+                    </div>
+                    <div className="flex items-end gap-1 h-8 mt-4">
+                      {[30, 60, 40, 80, 50, 90, 70].map((height, index) => (
+                        <div
+                          key={index}
+                          className="bg-gradient-to-t from-brand-blue to-brand-purple rounded-sm flex-1 opacity-80"
+                          style={{ height: `${height}%` }}
+                        ></div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Bottom Card - Services */}
+                  <div className="transform rotate-1 bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl p-6 border border-gray-200/50 hover:rotate-0 transition-transform duration-500">
+                    <h3 className="font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                      <Cog className="w-4 h-4 text-brand-blue" />
+                      Serviços
+                    </h3>
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2 text-sm">
+                        <div className="w-3 h-3 bg-brand-blue rounded-full"></div>
+                        <span className="text-gray-700">
+                          Sites Institucionais
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm">
+                        <div className="w-3 h-3 bg-brand-purple rounded-full"></div>
+                        <span className="text-gray-700">
+                          Sistemas Personalizados
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm">
+                        <div className="w-3 h-3 bg-whatsapp rounded-full"></div>
+                        <span className="text-gray-700">Landing Pages</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm">
+                        <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <span className="text-gray-700">
+                          Portfólio Profissional
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Success Badge */}
+                <div className="absolute -top-6 -right-6 bg-gradient-to-r from-brand-blue to-brand-purple text-white rounded-full p-3 shadow-xl">
+                  <Check className="w-6 h-6" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="servicos" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-6">
+              Serviços que Transformam
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Soluções digitais completas para levar seu negócio ao próximo
+              nível
+            </p>
+          </div>
+
+          {/* First row - 3 cards */}
+          <div className="flex justify-center mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl">
+              {services.slice(0, 3).map((service, index) => (
+                <div
+                  key={index}
+                  className="group relative bg-white rounded-3xl p-8 border border-gray-100 hover:border-brand-blue/30 transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-y-2 flex flex-col h-full"
+                  onClick={() => handleServiceClick(service.title)}
+                >
+                  {/* Service Icon */}
+                  <div className="relative mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <service.icon className="w-8 h-8 text-brand-blue group-hover:text-brand-purple transition-colors duration-300" />
+                    </div>
+                    {service.badge && (
+                      <Badge className="absolute -top-2 -right-2 bg-yellow-100 text-yellow-700 text-xs px-2 py-1">
+                        {service.badge}
+                      </Badge>
+                    )}
+                    {service.popular && (
+                      <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-brand-blue to-brand-purple text-white px-3 py-1">
+                        Popular
+                      </Badge>
+                    )}
+                  </div>
+
+                  {/* Service Title */}
+                  <h3 className="text-xl font-bold text-brand-dark mb-3 group-hover:text-brand-blue transition-colors duration-300">
+                    {service.title}
+                  </h3>
+
+                  {/* Service Description */}
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">
+                    {service.description}
+                  </p>
+
+                  {/* Features List */}
+                  <div className="space-y-2 mb-6">
+                    {service.features
+                      .slice(0, 3)
+                      .map((feature, featureIndex) => (
+                        <div
+                          key={featureIndex}
+                          className="flex items-center gap-2 text-sm text-gray-600"
+                        >
+                          <Check className="w-4 h-4 text-whatsapp flex-shrink-0" />
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                  </div>
+
+                  {/* CTA Button - Fixed at bottom with 16px margin */}
+                  <div className="mt-auto" style={{ marginBottom: "16px" }}>
+                    <Button
+                      className="w-full bg-brand-blue hover:bg-brand-purple text-white rounded-xl transition-all duration-300 group-hover:shadow-lg"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleServiceClick(service.title);
+                      }}
+                    >
+                      <MessageCircle className="w-4 h-4 mr-2" />
+                      Contratar
+                    </Button>
+                  </div>
+
+                  {/* Hover Gradient Border */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-blue via-brand-purple to-brand-blue opacity-0 group-hover:opacity-20 transition-opacity duration-300 -z-10"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Second row - 2 cards centered */}
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
+              {services.slice(3, 5).map((service, index) => (
+                <div
+                  key={index + 3}
+                  className="group relative bg-white rounded-3xl p-8 border border-gray-100 hover:border-brand-blue/30 transition-all duration-300 cursor-pointer hover:shadow-xl hover:-translate-y-2 flex flex-col h-full"
+                  onClick={() => handleServiceClick(service.title)}
+                >
+                  {/* Service Icon */}
+                  <div className="relative mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <service.icon className="w-8 h-8 text-brand-blue group-hover:text-brand-purple transition-colors duration-300" />
+                    </div>
+                    {service.badge && (
+                      <Badge className="absolute -top-2 -right-2 bg-yellow-100 text-yellow-700 text-xs px-2 py-1">
+                        {service.badge}
+                      </Badge>
+                    )}
+                    {service.popular && (
+                      <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-brand-blue to-brand-purple text-white px-3 py-1">
+                        Popular
+                      </Badge>
+                    )}
+                  </div>
+
+                  {/* Service Title */}
+                  <h3 className="text-xl font-bold text-brand-dark mb-3 group-hover:text-brand-blue transition-colors duration-300">
+                    {service.title}
+                  </h3>
+
+                  {/* Service Description */}
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">
+                    {service.description}
+                  </p>
+
+                  {/* Features List */}
+                  <div className="space-y-2 mb-6">
+                    {service.features
+                      .slice(0, 3)
+                      .map((feature, featureIndex) => (
+                        <div
+                          key={featureIndex}
+                          className="flex items-center gap-2 text-sm text-gray-600"
+                        >
+                          <Check className="w-4 h-4 text-whatsapp flex-shrink-0" />
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                  </div>
+
+                  {/* CTA Button - Fixed at bottom with 16px margin */}
+                  <div className="mt-auto" style={{ marginBottom: "16px" }}>
+                    <Button
+                      className="w-full bg-brand-blue hover:bg-brand-purple text-white rounded-xl transition-all duration-300 group-hover:shadow-lg"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleServiceClick(service.title);
+                      }}
+                    >
+                      <MessageCircle className="w-4 h-4 mr-2" />
+                      Contratar
+                    </Button>
+                  </div>
+
+                  {/* Hover Gradient Border */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-blue via-brand-purple to-brand-blue opacity-0 group-hover:opacity-20 transition-opacity duration-300 -z-10"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="mt-20 text-center bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl p-12">
+            <h3 className="text-2xl font-bold text-brand-dark mb-4">
+              Precisa de algo personalizado?
+            </h3>
+            <p className="text-gray-600 mb-8 max-w-md mx-auto">
+              Criamos soluções sob medida para necessidades específicas do seu
+              negócio
+            </p>
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white px-8 py-3 rounded-full transition-all duration-300"
+              onClick={() => window.open(whatsappUrl, "_blank")}
+            >
+              <MessageCircle className="w-5 h-5 mr-2" />
+              Conversar no WhatsApp
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section
+        id="portfolio"
+        className="py-24 bg-gradient-to-br from-gray-50 to-blue-50"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-4">
+              Projetos em Destaque
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
+              Exemplos de soluções criadas para diferentes segmentos
+            </p>
+            <Badge variant="outline" className="text-sm text-gray-500">
+              Projetos fictícios criados para demonstração
+            </Badge>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {projects.map((project, index) => (
+              <Card
+                key={index}
+                className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-0 bg-white"
+              >
+                <div className="aspect-video bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <CardHeader>
+                  <CardTitle className="text-lg text-brand-dark">
+                    {project.name}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {project.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Plans Section */}
+      <section id="planos" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-4">
+              Planos Transparentes
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
+              Escolha o plano ideal para o seu negócio
+            </p>
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-blue to-brand-purple text-white px-6 py-3 rounded-full">
+              <TrendingUp className="w-5 h-5" />
+              <span className="font-semibold">
+                A partir de R$497 — abaixo do valor de mercado
+              </span>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+            {plans.map((plan, index) => (
+              <Card
+                key={index}
+                className={`relative overflow-hidden transition-all duration-300 ${plan.popular ? "ring-2 ring-brand-blue shadow-xl scale-105" : "hover:shadow-lg"}`}
+              >
+                {plan.popular && (
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-brand-blue to-brand-purple text-white px-6 py-2 rounded-b-lg text-sm font-semibold">
+                    Mais Popular
+                  </div>
+                )}
+
+                <CardHeader className="text-center pt-8">
+                  <CardTitle className="text-2xl text-brand-dark mb-2">
+                    {plan.name}
+                  </CardTitle>
+                  <div className="mb-4">
+                    <span className="text-4xl font-bold text-brand-blue">
+                      R${plan.price}
+                    </span>
+                    <span className="text-gray-600 ml-2">à vista</span>
+                  </div>
+                  <p className="text-gray-600">{plan.description}</p>
+                </CardHeader>
+
+                <CardContent className="space-y-4">
+                  {plan.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-brand-blue flex-shrink-0" />
+                      <span className="text-gray-700">{feature}</span>
+                    </div>
+                  ))}
+
+                  <Button
+                    className={`w-full mt-6 ${plan.popular ? "bg-gradient-to-r from-brand-blue to-brand-purple hover:shadow-lg" : "bg-gray-100 text-gray-700 hover:bg-gray-200"} transition-all duration-200`}
+                    onClick={() => window.open(whatsappUrl, "_blank")}
+                  >
+                    Escolher Plano
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center space-y-4">
+            <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600">
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4 text-brand-blue" />
+                Entrega rápida
+              </div>
+              <div className="flex items-center gap-2">
+                <MessageCircle className="w-4 h-4 text-whatsapp" />
+                Suporte direto no WhatsApp
+              </div>
+              <div className="flex items-center gap-2">
+                <Star className="w-4 h-4 text-yellow-500" />
+                Pagamento facilitado
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Strong CTA Section */}
+      <section className="py-24 bg-gradient-to-br from-brand-blue via-brand-purple to-brand-blue">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
+            Pronto para levar seu negócio ao digital?
+          </h2>
+
+          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto">
+            Transforme sua presença digital hoje mesmo. Resultados garantidos
+            com tecnologia e preço justo.
+          </p>
+
+          <Button
+            size="lg"
+            className="bg-whatsapp hover:bg-whatsapp/90 text-white px-12 py-6 text-xl rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+            onClick={() => window.open(whatsappUrl, "_blank")}
+          >
+            <MessageCircle className="w-6 h-6 mr-3" />
+            Fale comigo agora pelo WhatsApp
+          </Button>
+
+          <p className="mt-6 text-white/80 text-sm">
+            Resposta em até 2 horas • Orçamento gratuito • Sem compromisso
+          </p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-brand-dark text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-xl mb-8 text-white/90">
+              Este site está em constante evolução — novos serviços estão
+              chegando.
+            </p>
+
+            <div className="flex justify-center items-center gap-8 mb-8"></div>
+
+            <div className="border-t border-white/20 pt-8">
+              <p className="text-white/70 text-sm">
+                © {new Date().getFullYear()} • Desenvolvido com tecnologia moderna • Todos os
+                direitos reservados
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
