@@ -25,7 +25,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 export default function Index() {
   const whatsappNumber = "5511999999999"; // Replace with actual WhatsApp number
@@ -42,62 +42,6 @@ export default function Index() {
         block: "start",
       });
     }
-  };
-
-  // Scroll animation hook
-  const useScrollAnimation = (threshold = 0.1) => {
-    const ref = useRef<HTMLDivElement>(null);
-    const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-      const element = ref.current;
-      if (!element) return;
-
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          setIsVisible(entry.isIntersecting);
-        },
-        {
-          threshold,
-          rootMargin: "50px 0px -50px 0px",
-        },
-      );
-
-      observer.observe(element);
-
-      return () => {
-        observer.unobserve(element);
-      };
-    }, [threshold]);
-
-    return { ref, isVisible };
-  };
-
-  // Animation wrapper component
-  const ScrollFadeIn = ({
-    children,
-    delay = 0,
-    className = "",
-  }: {
-    children: React.ReactNode;
-    delay?: number;
-    className?: string;
-  }) => {
-    const { ref, isVisible } = useScrollAnimation();
-
-    return (
-      <div
-        ref={ref}
-        className={`transition-all duration-700 ease-out ${className}`}
-        style={{
-          opacity: isVisible ? 1 : 0,
-          transform: isVisible ? "translateY(0px)" : "translateY(30px)",
-          transitionDelay: `${delay}ms`,
-        }}
-      >
-        {children}
-      </div>
-    );
   };
 
   // Typewriter effect
@@ -555,7 +499,7 @@ export default function Index() {
         className="py-24 bg-gradient-to-br from-gray-50 to-blue-50"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <ScrollFadeIn className="text-center mb-16">
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-6">
               Sobre mim
             </h2>
@@ -563,12 +507,11 @@ export default function Index() {
               Desenvolvedor apaixonado por criar soluções digitais que
               transformam negócios
             </p>
-          </ScrollFadeIn>
+          </div>
 
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Column - Content */}
-            <ScrollFadeIn delay={200}>
-              <div className="space-y-8">
+            <div className="space-y-8">
               {/* Header Badge */}
               <div className="flex items-center gap-2 text-brand-blue text-sm font-medium">
                 <Star className="w-4 h-4" />
@@ -685,7 +628,7 @@ export default function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-6">
-              Serviços que Transformam
+              Servi��os que Transformam
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Soluções digitais completas para levar seu negócio ao próximo
