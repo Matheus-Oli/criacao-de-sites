@@ -1393,16 +1393,19 @@ export default function Index() {
                 className="group overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-200 bg-white"
               >
                 <div className="aspect-video bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  <ProjectCarousel
+                    images={project.images}
+                    projectName={project.name}
+                    onImageClick={(imageIndex) => {
+                      setSelectedProject(project);
+                      setSelectedImageIndex(imageIndex);
+                    }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <Badge className="absolute top-4 left-4 bg-white/90 text-brand-dark">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                  <Badge className="absolute top-4 left-4 bg-white/90 text-brand-dark z-10">
                     {project.category}
                   </Badge>
-                  <div className="absolute top-4 right-4">
+                  <div className="absolute top-4 right-4 z-10">
                     <Badge
                       className={`${
                         project.status === "Concluído"
