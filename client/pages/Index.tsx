@@ -178,7 +178,7 @@ export default function Index() {
   const projects = [
     {
       name: "Sistema BarberShop Pro",
-      image: "/placeholder.svg",
+      images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
       description:
         "Sistema completo de controle de estoque e agendamento para barbearia",
       category: "Sistema Web",
@@ -192,7 +192,7 @@ export default function Index() {
     },
     {
       name: "Landing Page Imobiliária",
-      image: "/placeholder.svg",
+      images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
       description:
         "Página de vendas para lançamento de empreendimento residencial",
       category: "Landing Page",
@@ -202,7 +202,7 @@ export default function Index() {
     },
     {
       name: "Site Restaurante Gourmet",
-      image: "/placeholder.svg",
+      images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
       description:
         "Site institucional com cardápio digital e sistema de reservas",
       category: "Site Institucional",
@@ -212,7 +212,7 @@ export default function Index() {
     },
     {
       name: "E-commerce Fashion",
-      image: "/placeholder.svg",
+      images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
       description: "Loja virtual completa com integração de pagamentos",
       category: "E-commerce",
       technologies: ["Next.js", "Stripe", "MongoDB"],
@@ -220,6 +220,18 @@ export default function Index() {
       status: "Concluído",
     },
   ];
+
+  // Modal state for fullscreen project view
+  const [selectedProject, setSelectedProject] = useState<{
+    name: string;
+    images: string[];
+    description: string;
+    category: string;
+    technologies: string[];
+    features: string[];
+    status: string;
+  } | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const plans = [
     {
