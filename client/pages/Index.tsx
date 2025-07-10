@@ -653,7 +653,15 @@ export default function Index() {
       </section>
 
       {/* Services Section */}
-      <section id="servicos" className="py-24 bg-white">
+      <section
+        id="servicos"
+        className="py-24 bg-white scroll-animate"
+        style={{
+          opacity: 0,
+          transform: "translateY(30px)",
+          transition: "all 0.6s ease-out",
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-6">
