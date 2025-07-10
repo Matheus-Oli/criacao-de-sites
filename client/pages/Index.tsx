@@ -290,16 +290,16 @@ export default function Index() {
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-sm border-b border-gray-200/50 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <h1 className="text-xl font-bold bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent">
-                  Matheus Oliveira
-                </h1>
-              </div>
+          <div className="flex items-center justify-center h-16 relative">
+            {/* Logo - positioned absolutely to the left */}
+            <div className="absolute left-0">
+              <h1 className="text-xl font-bold bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent">
+                Matheus Oliveira
+              </h1>
             </div>
 
-            <nav className="hidden md:flex space-x-8">
+            {/* Navigation - centered */}
+            <nav className="flex space-x-8">
               <button
                 onClick={() => scrollToSection("sobre")}
                 className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium"
@@ -337,8 +337,6 @@ export default function Index() {
                 Planos
               </button>
             </nav>
-
-            <div className="flex items-center space-x-4"></div>
           </div>
         </div>
       </header>
