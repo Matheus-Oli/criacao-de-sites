@@ -21,6 +21,7 @@ import {
   Briefcase,
   Shield,
   Lightbulb,
+  Instagram,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -322,28 +323,26 @@ export default function Index() {
 
   const services = [
     {
-      icon: Globe,
-      title: "Sites Institucionais",
+      icon: Target,
+      title: "Landing Pages",
       description:
-        "Sites profissionais completos com design moderno, responsivo e otimizado para conversão. Inclui páginas institucionais, formulários de contato e integração com redes sociais.",
+        "Páginas estratégicas focadas em conversão. Ideal para campanhas, captação de leads e ofertas. Layouts persuasivos, integração com marketing para maximizar seus resultados.",
       features: [
-        "Design responsivo",
-        "SEO otimizado",
-        "Formulários integrados",
-        "Painel administrativo",
+        "Alta conversão",
+        "Mostra seus serviços",
+        "Seus clientes entendem",
       ],
       popular: false,
     },
     {
-      icon: Target,
-      title: "Landing Pages",
+      icon: Globe,
+      title: "Sites Institucionais",
       description:
-        "Páginas de alta conversão focadas em vendas e captação de leads. Design persuasivo com chamadas para ação estratégicas e integração com ferramentas de marketing.",
+        "Sites profissionais e completos com design moderno, responsivo e pensado para gerar confiança e resultados. Inclui páginas institucionais, formulários personalizados e integração com redes sociais.",
       features: [
-        "Alta conversão",
-        "A/B Testing",
-        "Analytics integrado",
-        "Otimização para ads",
+        "Design responsivo",
+        "SEO otimizado",
+        "Formulários integrados",
       ],
       popular: true,
     },
@@ -351,12 +350,11 @@ export default function Index() {
       icon: Cog,
       title: "Sistemas Personalizados",
       description:
-        "Desenvolvimento de sistemas sob medida para seu negócio. Desde controle de estoque até plataformas de gestão completas, criamos a solução que você precisa.",
+        "Desenvolvimento sob medida para o seu negócio. Desde controle de estoque até sistemas de gestão completos, com foco em automação e praticidade para o dia a dia.",
       features: [
-        "Desenvolvimento custom",
-        "Integração com APIs",
-        "Banco de dados",
-        "Suporte técnico",
+        "Desenvolvimento customizado",
+        "Banco de dados integrado",
+        "Suporte técnico 24h",
       ],
       popular: false,
     },
@@ -364,12 +362,23 @@ export default function Index() {
       icon: Users,
       title: "Renovação de Sites",
       description:
-        "Em Breve - Modernize seu site existente com novo design, melhor performance e funcionalidades atualizadas. Mantemos seu conteúdo e melhoramos tudo o que importa.",
+        "Modernize seu site atual com novo design, performance otimizada e funcionalidades atualizadas. Reaproveitamos seu conteúdo e melhoramos o que realmente importa.",
       features: [
-        "Design moderno",
+        "Design moderno e responsivo",
         "Performance otimizada",
-        "Mobile-first",
         "Migração segura",
+      ],
+      popular: false,
+    },
+    {
+      icon: Instagram, // ou Instagram, Facebook, Twitter dependendo do que você preferir
+      title: "Gerencia de Redes Sociais",
+      description:
+        "Estratégias completas para suas redes sociais. Criação de conteúdo, engajamento, análise de métricas e crescimento orgânico. Presença digital consistente que conecta com seu público.",
+      features: [
+        "Conteúdo estratégico",
+        "Identidade visual",
+        "Análise de conversão digital",
       ],
       popular: false,
       comingSoon: true,
@@ -378,11 +387,10 @@ export default function Index() {
       icon: Camera,
       title: "Portfólios Profissionais",
       description:
-        "Websites personalizados para profissionais, artistas e freelancers mostrarem seus trabalhos. Design elegante com galeria otimizada e foco na apresentação dos seus projetos.",
+        "Websites elegantes para artistas, criadores, fotógrafos e freelancers que querem mostrar seus trabalhos com estilo e profissionalismo.",
       features: [
         "Galeria de projetos",
-        "Design elegante",
-        "SEO otimizado",
+        "Design elegante e personalizado",
         "Formulário de contato",
       ],
       popular: false,
@@ -507,11 +515,13 @@ export default function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center h-16 relative">
             {/* Logo - positioned absolutely to the left */}
-            <div className="absolute left-0">
-              <h1 className="text-xl font-bold bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent">
-                Matheus Oliveira
+            <div className="absolute left-0 flex flex-row items-center">
+              <img src="/favicon.ico" className="w-12 h-12" alt="Logo" />
+              <h1 className="text-xl font-bold bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent self-center">
+                atheus Oliveira
               </h1>
             </div>
+
 
             {/* Navigation - centered */}
             <nav className="flex space-x-8">
@@ -555,6 +565,7 @@ export default function Index() {
           </div>
         </div>
       </header>
+
       {/* Hero Section */}
       <section className="relative overflow-hidden min-h-[90vh] flex items-center">
         {/* Animated Background Pattern */}
@@ -606,9 +617,9 @@ export default function Index() {
                   </div>
                   <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
                     <img
-                      src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
+                      src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2Fcf4a28f9586f4e19a291c587dc7d9a75?format=webp&width=800"
                       alt="WhatsApp"
-                      className="w-4 h-4"
+                      className="w-5 h-5"
                     />
                     <span>Suporte direto</span>
                   </div>
@@ -775,30 +786,21 @@ export default function Index() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Column - Content */}
             <div className="space-y-8">
-              {/* Header Badge */}
-              <div className="flex items-center gap-2 text-brand-blue text-sm font-medium">
-                <Star className="w-4 h-4" />
-                <span>Excelência em desenvolvimento</span>
-              </div>
 
               {/* Main Title */}
               <div className="space-y-4">
                 <h3 className="text-3xl md:text-4xl font-bold text-brand-dark leading-tight">
-                  Mais de <span className="text-brand-blue">3 anos</span>{" "}
-                  criando soluções digitais
+                  Criando <span className="text-brand-blue">soluções digitais</span>{" "} sob medida para negócios que querem <span className="text-brand-blue">crescer online</span>{" "}
                 </h3>
 
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Matheus Oliveira é um desenvolvedor especializado em soluções
-                  completas de desenvolvimento web, oferecendo serviços de
-                  criação, otimização, manutenção e modernização para ambientes
-                  digitais e comerciais.
+                  Olá! Eu sou o Matheus Oliveira, desenvolvedor focado em transformar ideias em soluções digitais funcionais e acessíveis. 
+                  Trabalho com criação de <strong>sites institucionais, landing pages e sistemas sob medida</strong>, tudo com atenção aos detalhes, visual moderno e foco no que realmente importa: resolver a necessidade de cada cliente.
                 </p>
 
                 <p className="text-gray-600 leading-relaxed">
-                  Minha missão é proporcionar o máximo desempenho digital com
-                  eficiência tecnológica, sempre priorizando a qualidade e a
-                  satisfação dos clientes.
+                  Minha missão é ajudar pequenos negócios a se posicionarem online com qualidade, proximidade e preço justo. 
+                  Tecnologia não precisa ser complicada, ela só precisa fazer sentido pra quem usa.
                 </p>
               </div>
 
@@ -808,42 +810,42 @@ export default function Index() {
                   <div className="w-8 h-8 bg-brand-blue/10 rounded-full flex items-center justify-center">
                     <Check className="w-4 h-4 text-brand-blue" />
                   </div>
-                  <span className="text-sm">Desenvolvimento profissional</span>
+                  <span className="text-sm">Sites modernos e responsivos</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-gray-600">
                   <div className="w-8 h-8 bg-brand-blue/10 rounded-full flex items-center justify-center">
                     <Check className="w-4 h-4 text-brand-blue" />
                   </div>
-                  <span className="text-sm">Manutenção e suporte</span>
+                  <span className="text-sm">Atendimento direto e suporte contínuo</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-gray-600">
                   <div className="w-8 h-8 bg-brand-blue/10 rounded-full flex items-center justify-center">
                     <Check className="w-4 h-4 text-brand-blue" />
                   </div>
-                  <span className="text-sm">Otimização completa</span>
+                  <span className="text-sm">Otimização com foco em performance</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-gray-600">
                   <div className="w-8 h-8 bg-brand-blue/10 rounded-full flex items-center justify-center">
                     <Check className="w-4 h-4 text-brand-blue" />
                   </div>
-                  <span className="text-sm">SEO e performance</span>
+                  <span className="text-sm">SEO técnico básico incluído</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-gray-600">
                   <div className="w-8 h-8 bg-brand-blue/10 rounded-full flex items-center justify-center">
                     <Check className="w-4 h-4 text-brand-blue" />
                   </div>
-                  <span className="text-sm">Consultoria especializada</span>
+                  <span className="text-sm">Consultoria focada no seu tipo de negócio</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-gray-600">
                   <div className="w-8 h-8 bg-brand-blue/10 rounded-full flex items-center justify-center">
                     <Check className="w-4 h-4 text-brand-blue" />
                   </div>
-                  <span className="text-sm">Suporte contínuo</span>
+                  <span className="text-sm">Manutenção e atualizações sob demanda</span>
                 </div>
               </div>
             </div>
@@ -852,7 +854,7 @@ export default function Index() {
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden bg-white p-8 shadow-xl">
                 <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F9b25c0eb5264438ba3206d29884955df?format=webp&width=800"
+                  src="/public/matheus.jpg"
                   alt="Matheus Oliveira trabalhando"
                   className="w-full h-96 object-cover rounded-2xl"
                 />
@@ -868,7 +870,7 @@ export default function Index() {
                     </h3>
                   </div>
                   <p className="text-gray-600 text-sm mb-3">
-                    Técnico certificado e qualificado
+                    Técnico formado e qualificado
                   </p>
                   <div className="flex items-center gap-1">
                     {[1, 2, 3, 4, 5].map((star) => (
@@ -899,7 +901,7 @@ export default function Index() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-6">
-              Servi��os que Transformam
+              Serviços que Transformam
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Soluções digitais completas para levar seu negócio ao próximo
@@ -1002,8 +1004,8 @@ export default function Index() {
 
           {/* Second row - 2 cards centered */}
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
-              {services.slice(3, 5).map((service, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl">
+              {services.slice(3, 6).map((service, index) => (
                 <div
                   key={index + 3}
                   className={`group relative bg-white rounded-3xl p-8 border border-gray-100 hover:border-brand-blue/30 transition-all duration-300 flex flex-col h-full ${
@@ -1111,7 +1113,7 @@ export default function Index() {
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2Fcf4a28f9586f4e19a291c587dc7d9a75?format=webp&width=800"
                 alt="WhatsApp"
-                className="w-5 h-5 mr-2"
+                className="w-8 h-8 mr-2"
               />
               Conversar no WhatsApp
             </Button>
@@ -1153,23 +1155,6 @@ export default function Index() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-r from-brand-purple to-brand-blue rounded-full flex items-center justify-center mx-auto mb-6">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
-                  alt="WhatsApp"
-                  className="w-8 h-8"
-                />
-              </div>
-              <h3 className="text-xl font-bold text-brand-dark mb-4">
-                Comunicação Direta
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Atendimento personalizado via WhatsApp. Você fala diretamente
-                comigo, sem intermediários ou call centers.
-              </p>
-            </div>
-
             <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300">
               <div className="w-16 h-16 bg-gradient-to-r from-whatsapp to-brand-blue rounded-full flex items-center justify-center mx-auto mb-6">
                 <Star className="w-8 h-8 text-white" />
@@ -1193,6 +1178,23 @@ export default function Index() {
               <p className="text-gray-600 leading-relaxed">
                 Cada projeto é único. Desenvolvo soluções sob medida para
                 atender exatamente às suas necessidades específicas.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-brand-purple to-brand-blue rounded-full flex items-center justify-center mx-auto mb-6">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
+                  alt="WhatsApp"
+                  className="w-8 h-8"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-brand-dark mb-4">
+                Comunicação Direta
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Atendimento personalizado via WhatsApp. Você fala diretamente
+                comigo, sem intermediários ou call centers.
               </p>
             </div>
 
@@ -1253,13 +1255,12 @@ export default function Index() {
                   <Award className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-brand-dark">React Developer</h3>
-                  <p className="text-sm text-gray-600">Meta (Facebook)</p>
+                  <h3 className="font-bold text-brand-dark">Desenvolvimento De Sistemas</h3>
+                  <p className="text-sm text-gray-600">SENAI</p>
                 </div>
               </div>
               <p className="text-gray-600 text-sm">
-                Certificação oficial em desenvolvimento React, cobrindo hooks,
-                state management e melhores práticas.
+                Certificação tecnica em desenvolvimento de sistemas (+ algo)
               </p>
             </div>
 
@@ -1270,14 +1271,13 @@ export default function Index() {
                 </div>
                 <div>
                   <h3 className="font-bold text-brand-dark">
-                    Node.js Developer
+                    Análise e Desenvolvimento De Sistemas
                   </h3>
-                  <p className="text-sm text-gray-600">Node.js Foundation</p>
+                  <p className="text-sm text-gray-600">FAESA</p>
                 </div>
               </div>
               <p className="text-gray-600 text-sm">
-                Especialização em desenvolvimento backend com Node.js, APIs
-                RESTful e arquitetura de sistemas.
+                Curso superior em Analise e Desenvolvimento de Sistemas
               </p>
             </div>
 
@@ -1288,18 +1288,17 @@ export default function Index() {
                 </div>
                 <div>
                   <h3 className="font-bold text-brand-dark">
-                    TypeScript Expert
+                    Complete Web Design
                   </h3>
-                  <p className="text-sm text-gray-600">Microsoft Learn</p>
+                  <p className="text-sm text-gray-600">Udemy</p>
                 </div>
               </div>
               <p className="text-gray-600 text-sm">
-                Domínio avançado em TypeScript para desenvolvimento type-safe e
-                código mais robusto.
+                Curso completo sobre web design paragarantir uma experiência agradável e funcional para o usuário.
               </p>
             </div>
 
-            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+            {/* <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center">
                   <Award className="w-6 h-6 text-white" />
@@ -1349,7 +1348,7 @@ export default function Index() {
                 Metodologias ágeis para gestão eficiente de projetos e entregas
                 no prazo.
               </p>
-            </div>
+            </div> */}
           </div>
 
           <div className="text-center">
