@@ -1129,7 +1129,7 @@ export default function Index() {
       {/* Differentials Section */}
       <section
         id="diferenciais"
-        className="py-24 bg-gradient-to-br from-gray-50 to-blue-50 scroll-animate"
+        className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50 scroll-animate"
         style={{
           opacity: 0,
           transform: "translateY(30px)",
@@ -1137,93 +1137,93 @@ export default function Index() {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-4 sm:mb-6">
               Meus Diferenciais
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
               O que me torna único e por que escolher meus serviços
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-r from-brand-blue to-brand-purple rounded-full flex items-center justify-center mx-auto mb-6">
-                <Clock className="w-8 h-8 text-white" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center hover:shadow-lg active:shadow-md transition-all duration-300 touch-manipulation">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-brand-blue to-brand-purple rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <Clock className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-brand-dark mb-4">
+              <h3 className="text-lg sm:text-xl font-bold text-brand-dark mb-3 sm:mb-4">
                 Entrega Rápida
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 Projetos entregues em prazos otimizados sem comprometer a
                 qualidade. Metodologia ágil para resultados eficientes.
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-r from-whatsapp to-brand-blue rounded-full flex items-center justify-center mx-auto mb-6">
-                <Star className="w-8 h-8 text-white" />
+            <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center hover:shadow-lg active:shadow-md transition-all duration-300 touch-manipulation">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-whatsapp to-brand-blue rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <Star className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-brand-dark mb-4">
+              <h3 className="text-lg sm:text-xl font-bold text-brand-dark mb-3 sm:mb-4">
                 Preço Justo
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 Tecnologia de qualidade com preços acessíveis. Sem taxas ocultas
                 ou surpresas no orçamento.
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-yellow-50 to-purple-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-r from-yellow-500 to-brand-purple rounded-full flex items-center justify-center mx-auto mb-6">
-                <Lightbulb className="w-8 h-8 text-white" />
+            <div className="bg-gradient-to-br from-yellow-50 to-purple-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center hover:shadow-lg active:shadow-md transition-all duration-300 touch-manipulation">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-yellow-500 to-brand-purple rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <Lightbulb className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-brand-dark mb-4">
+              <h3 className="text-lg sm:text-xl font-bold text-brand-dark mb-3 sm:mb-4">
                 Soluções Personalizadas
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 Cada projeto é único. Desenvolvo soluções sob medida para
                 atender exatamente às suas necessidades específicas.
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-r from-brand-purple to-brand-blue rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center hover:shadow-lg active:shadow-md transition-all duration-300 touch-manipulation">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-brand-purple to-brand-blue rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
                   alt="WhatsApp"
-                  className="w-8 h-8"
+                  className="w-6 h-6 sm:w-8 sm:h-8"
                 />
               </div>
-              <h3 className="text-xl font-bold text-brand-dark mb-4">
+              <h3 className="text-lg sm:text-xl font-bold text-brand-dark mb-3 sm:mb-4">
                 Comunicação Direta
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 Atendimento personalizado via WhatsApp. Você fala diretamente
                 comigo, sem intermediários ou call centers.
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-r from-brand-blue to-whatsapp rounded-full flex items-center justify-center mx-auto mb-6">
-                <Shield className="w-8 h-8 text-white" />
+            <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center hover:shadow-lg active:shadow-md transition-all duration-300 touch-manipulation">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-brand-blue to-whatsapp rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-brand-dark mb-4">
+              <h3 className="text-lg sm:text-xl font-bold text-brand-dark mb-3 sm:mb-4">
                 Suporte Contínuo
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 Não abandono você após a entrega. Ofereço suporte técnico e
                 manutenção para garantir que tudo funcione perfeitamente.
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-50 to-yellow-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-r from-brand-purple to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <TrendingUp className="w-8 h-8 text-white" />
+            <div className="bg-gradient-to-br from-purple-50 to-yellow-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center hover:shadow-lg active:shadow-md transition-all duration-300 touch-manipulation">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-brand-purple to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-brand-dark mb-4">
+              <h3 className="text-lg sm:text-xl font-bold text-brand-dark mb-3 sm:mb-4">
                 Resultados Comprovados
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 Foco em métricas e resultados reais. Seus projetos são
                 otimizados para conversão e performance.
               </p>
