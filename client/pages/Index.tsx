@@ -360,7 +360,7 @@ export default function Index() {
       icon: Globe,
       title: "Sites Institucionais",
       description:
-        "Sites profissionais e completos com design moderno, responsivo e pensado para gerar confian��a e resultados. Inclui páginas institucionais, formulários personalizados e integração com redes sociais.",
+        "Sites profissionais e completos com design moderno, responsivo e pensado para gerar confiança e resultados. Inclui páginas institucionais, formulários personalizados e integração com redes sociais.",
       features: [
         "Design responsivo",
         "SEO otimizado",
@@ -542,16 +542,16 @@ export default function Index() {
       {/* Header */}
       <header className="bg-white/90 backdrop-blur-sm border-b border-gray-200/50 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <div className="flex flex-row items-center">
+          <div className="flex items-center justify-center h-16 relative">
+            {/* Logo - positioned absolutely to the left */}
+            <div className="absolute left-0 flex flex-row items-center">
               <img src="/favicon.ico" className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" alt="Matheus Oliveira Logo" />
               <h1 className="text-sm sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent ml-2">
                 <span className="hidden xs:inline">M</span>atheus Oliveira
               </h1>
             </div>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation - centered */}
             <nav className="hidden lg:flex space-x-6 xl:space-x-8">
               <button
                 onClick={() => scrollToSection("sobre")}
