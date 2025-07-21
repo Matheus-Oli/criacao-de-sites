@@ -428,7 +428,11 @@ export default function Index() {
   const projects = [
     {
       name: "Sistema Pedal Cicle",
-      images: ["/pedal-cicle/PC3.png", "/pedal-cicle/PC1.png", "/pedal-cicle/PC2.png"],
+      images: [
+        "/pedal-cicle/PC3.png",
+        "/pedal-cicle/PC1.png",
+        "/pedal-cicle/PC2.png",
+      ],
       description:
         "Sistema completo para gestão de estoque e vendas, com dashboards interativos, geração de relatórios detalhados e exportação de dados para Excel.",
       category: "Sistema Web",
@@ -441,35 +445,57 @@ export default function Index() {
       status: "Concluído",
     },
     {
-      "name": "Landing Page Pedal Cicle",
-      "images": ["/pedal-cicle/PC4.png", "/pedal-cicle/PC5.png", "/pedal-cicle/PC6.png"],
-      "description": "Landing page moderna e responsiva para apresentação de serviços e produtos, com foco em captura de leads, integração com formuláriose monitoramento de analytics.",
-      "category": "Landing Page",
-      "technologies": ["React", "Tailwind", "TypeScript"],
-      "features": [
+      name: "Landing Page Pedal Cicle",
+      images: [
+        "/pedal-cicle/PC4.png",
+        "/pedal-cicle/PC5.png",
+        "/pedal-cicle/PC6.png",
+      ],
+      description:
+        "Landing page moderna e responsiva para apresentação de serviços e produtos, com foco em captura de leads, integração com formuláriose monitoramento de analytics.",
+      category: "Landing Page",
+      technologies: ["React", "Tailwind", "TypeScript"],
+      features: [
         "Design responsivo otimizado para múltiplos dispositivos",
         "Formulários integrados para captura de leads",
-        "Análise de dados e performance via ferramentas de analytics"
+        "Análise de dados e performance via ferramentas de analytics",
       ],
-      "status": "Em andamento"
+      status: "Em andamento",
     },
     {
       name: "Portfólio Pessoal",
-      images: ["/portfolio-pessoal/PP1.png", "/portfolio-pessoal/PP2.png", "/portfolio-pessoal/PP3.png"],
+      images: [
+        "/portfolio-pessoal/PP1.png",
+        "/portfolio-pessoal/PP2.png",
+        "/portfolio-pessoal/PP3.png",
+      ],
       description:
         "Portfólio profissional apresentando competências, trajetória, projetos realizados e experiências relevantes.",
       category: "Portfólio Profissional",
       technologies: ["React", "Vite"],
-      features: ["Apresentação de projetos", "Links para redes sociais e contato", "Design moderno e condizente"],
+      features: [
+        "Apresentação de projetos",
+        "Links para redes sociais e contato",
+        "Design moderno e condizente",
+      ],
       status: "Concluído",
     },
     {
       name: "Site Institucional Conexao 31",
-      images: ["/conexao-31/C3.png", "/conexao-31/C1.png", "/conexao-31/C2.png"],
-      description: "Site institucional completo com formulário, envio de email, captura de leads, responsividade e chamativo, trazendo uma experiência relevante para os usuários.",
+      images: [
+        "/conexao-31/C3.png",
+        "/conexao-31/C1.png",
+        "/conexao-31/C2.png",
+      ],
+      description:
+        "Site institucional completo com formulário, envio de email, captura de leads, responsividade e chamativo, trazendo uma experiência relevante para os usuários.",
       category: "Site Institucional",
       technologies: ["React", "Vite", "Resend"],
-      features: ["Formulário funcional", "Captura de leads", "Projeto personalizavel"],
+      features: [
+        "Formulário funcional",
+        "Captura de leads",
+        "Projeto personalizavel",
+      ],
       status: "Concluído",
     },
   ];
@@ -505,7 +531,8 @@ export default function Index() {
     {
       name: "Site Profissional",
       price: "697",
-      description: "Para empresas que querem uma presença forte e completa na internet.",
+      description:
+        "Para empresas que querem uma presença forte e completa na internet.",
       features: [
         "Até 8 páginas personalizadas",
         "Design profissional",
@@ -523,7 +550,8 @@ export default function Index() {
     {
       name: "Site Avançado",
       price: "Em breve",
-      description: "Para empresas que precisam de funcionalidades mais robustas e exclusivas.",
+      description:
+        "Para empresas que precisam de funcionalidades mais robustas e exclusivas.",
       features: [
         "Páginas ilimitadas",
         "Painel administrativo completo",
@@ -545,7 +573,11 @@ export default function Index() {
           <div className="flex items-center justify-center h-16 relative">
             {/* Logo - positioned absolutely to the left */}
             <div className="absolute left-0 flex flex-row items-center">
-              <img src="/favicon.ico" className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" alt="Matheus Oliveira Logo" />
+              <img
+                src="/favicon.ico"
+                className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12"
+                alt="Matheus Oliveira Logo"
+              />
               <h1 className="text-sm sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent ml-2">
                 <span className="hidden xs:inline">M</span>atheus Oliveira
               </h1>
@@ -750,7 +782,9 @@ export default function Index() {
                   onClick={() => scrollToSection("portfolio")}
                   className="px-4 py-3 sm:px-6 sm:py-3 text-sm sm:text-base rounded-full border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white active:bg-brand-blue/90 transition-all duration-300 bg-white/80 backdrop-blur-sm touch-manipulation"
                 >
-                  <span className="hidden sm:inline">Veja exemplos de projetos</span>
+                  <span className="hidden sm:inline">
+                    Veja exemplos de projetos
+                  </span>
                   <span className="sm:hidden">Ver projetos</span>
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
@@ -889,21 +923,31 @@ export default function Index() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left Column - Content */}
             <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
-
               {/* Main Title */}
               <div className="space-y-4">
                 <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark leading-tight">
-                  Criando <span className="text-brand-blue">soluções digitais</span>{" "} sob medida para negócios que querem <span className="text-brand-blue">crescer online</span>{" "}
+                  Criando{" "}
+                  <span className="text-brand-blue">soluções digitais</span> sob
+                  medida para negócios que querem{" "}
+                  <span className="text-brand-blue">crescer online</span>{" "}
                 </h3>
 
                 <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">
-                  Olá! Eu sou o Matheus Oliveira, desenvolvedor focado em transformar ideias em soluções digitais funcionais e acessíveis.
-                  Trabalho com criação de <strong>sites institucionais, landing pages e sistemas sob medida</strong>, tudo com atenção aos detalhes, visual moderno e foco no que realmente importa: resolver a necessidade de cada cliente.
+                  Olá! Eu sou o Matheus Oliveira, desenvolvedor focado em
+                  transformar ideias em soluções digitais funcionais e
+                  acessíveis. Trabalho com criação de{" "}
+                  <strong>
+                    sites institucionais, landing pages e sistemas sob medida
+                  </strong>
+                  , tudo com atenção aos detalhes, visual moderno e foco no que
+                  realmente importa: resolver a necessidade de cada cliente.
                 </p>
 
                 <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                  Minha missão é ajudar pequenos negócios a se posicionarem online com qualidade, proximidade e preço justo.
-                  Tecnologia n��o precisa ser complicada, ela só precisa fazer sentido pra quem usa.
+                  Minha missão é ajudar pequenos negócios a se posicionarem
+                  online com qualidade, proximidade e preço justo. Tecnologia
+                  n��o precisa ser complicada, ela só precisa fazer sentido pra
+                  quem usa.
                 </p>
               </div>
 
@@ -913,42 +957,54 @@ export default function Index() {
                   <div className="w-6 h-6 sm:w-8 sm:h-8 bg-brand-blue/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Check className="w-3 h-3 sm:w-4 sm:h-4 text-brand-blue" />
                   </div>
-                  <span className="text-xs sm:text-sm">Sites modernos e responsivos</span>
+                  <span className="text-xs sm:text-sm">
+                    Sites modernos e responsivos
+                  </span>
                 </div>
 
                 <div className="flex items-start gap-3 text-gray-600">
                   <div className="w-6 h-6 sm:w-8 sm:h-8 bg-brand-blue/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Check className="w-3 h-3 sm:w-4 sm:h-4 text-brand-blue" />
                   </div>
-                  <span className="text-xs sm:text-sm">Atendimento direto e suporte contínuo</span>
+                  <span className="text-xs sm:text-sm">
+                    Atendimento direto e suporte contínuo
+                  </span>
                 </div>
 
                 <div className="flex items-start gap-3 text-gray-600">
                   <div className="w-6 h-6 sm:w-8 sm:h-8 bg-brand-blue/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Check className="w-3 h-3 sm:w-4 sm:h-4 text-brand-blue" />
                   </div>
-                  <span className="text-xs sm:text-sm">Otimização com foco em performance</span>
+                  <span className="text-xs sm:text-sm">
+                    Otimização com foco em performance
+                  </span>
                 </div>
 
                 <div className="flex items-start gap-3 text-gray-600">
                   <div className="w-6 h-6 sm:w-8 sm:h-8 bg-brand-blue/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Check className="w-3 h-3 sm:w-4 sm:h-4 text-brand-blue" />
                   </div>
-                  <span className="text-xs sm:text-sm">SEO técnico básico incluído</span>
+                  <span className="text-xs sm:text-sm">
+                    SEO técnico básico incluído
+                  </span>
                 </div>
 
                 <div className="flex items-start gap-3 text-gray-600">
                   <div className="w-6 h-6 sm:w-8 sm:h-8 bg-brand-blue/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Check className="w-3 h-3 sm:w-4 sm:h-4 text-brand-blue" />
                   </div>
-                  <span className="text-xs sm:text-sm">Consultoria focada no seu tipo de negócio</span>
+                  <span className="text-xs sm:text-sm">
+                    Consultoria focada no seu tipo de negócio
+                  </span>
                 </div>
 
                 <div className="flex items-start gap-3 text-gray-600">
                   <div className="w-6 h-6 sm:w-8 sm:h-8 bg-brand-blue/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Check className="w-3 h-3 sm:w-4 sm:h-4 text-brand-blue" />
                   </div>
-                  <span className="text-xs sm:text-sm">Manutenção e atualizações sob demanda</span>
+                  <span className="text-xs sm:text-sm">
+                    Manutenção e atualizações sob demanda
+                  </span>
                 </div>
               </div>
             </div>
@@ -982,7 +1038,9 @@ export default function Index() {
                         className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"
                       />
                     ))}
-                    <span className="text-yellow-400 text-xs sm:text-sm ml-1 sm:ml-2">5.0</span>
+                    <span className="text-yellow-400 text-xs sm:text-sm ml-1 sm:ml-2">
+                      5.0
+                    </span>
                   </div>
                 </div>
               </div>
@@ -1055,17 +1113,15 @@ export default function Index() {
 
                 {/* Features List */}
                 <div className="space-y-2 mb-4 sm:mb-6">
-                  {service.features
-                    .slice(0, 3)
-                    .map((feature, featureIndex) => (
-                      <div
-                        key={featureIndex}
-                        className="flex items-start gap-2 text-xs sm:text-sm text-gray-600"
-                      >
-                        <Check className="w-3 h-3 sm:w-4 sm:h-4 text-whatsapp flex-shrink-0 mt-0.5" />
-                        <span>{feature}</span>
-                      </div>
-                    ))}
+                  {service.features.slice(0, 3).map((feature, featureIndex) => (
+                    <div
+                      key={featureIndex}
+                      className="flex items-start gap-2 text-xs sm:text-sm text-gray-600"
+                    >
+                      <Check className="w-3 h-3 sm:w-4 sm:h-4 text-whatsapp flex-shrink-0 mt-0.5" />
+                      <span>{feature}</span>
+                    </div>
+                  ))}
                 </div>
 
                 {/* CTA Button */}
@@ -1264,7 +1320,9 @@ export default function Index() {
                   <Award className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-brand-dark">Desenvolvimento De Sistemas</h3>
+                  <h3 className="font-bold text-brand-dark">
+                    Desenvolvimento De Sistemas
+                  </h3>
                   <p className="text-sm text-gray-600">SENAI</p>
                 </div>
               </div>
@@ -1303,7 +1361,8 @@ export default function Index() {
                 </div>
               </div>
               <p className="text-gray-600 text-sm">
-                Curso completo sobre web design paragarantir uma experiência agradável e funcional para o usuário.
+                Curso completo sobre web design paragarantir uma experiência
+                agradável e funcional para o usuário.
               </p>
             </div>
 
@@ -1511,7 +1570,10 @@ export default function Index() {
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-blue to-brand-purple text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full text-sm sm:text-base">
               <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5" />
               <span className="font-semibold">
-                <span className="hidden sm:inline">Sites institucionais a partir de </span>R$397
+                <span className="hidden sm:inline">
+                  Sites institucionais a partir de{" "}
+                </span>
+                R$397
               </span>
             </div>
           </div>
@@ -1562,10 +1624,12 @@ export default function Index() {
                       plan.comingSoon
                         ? "bg-gray-400 text-gray-600 cursor-not-allowed"
                         : plan.popular
-                        ? "bg-gradient-to-r from-brand-blue to-brand-purple hover:shadow-lg"
-                        : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                          ? "bg-gradient-to-r from-brand-blue to-brand-purple hover:shadow-lg"
+                          : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                     } transition-all duration-200`}
-                    onClick={() => !plan.comingSoon && window.open(whatsappUrl, "_blank")}
+                    onClick={() =>
+                      !plan.comingSoon && window.open(whatsappUrl, "_blank")
+                    }
                     disabled={plan.comingSoon}
                   >
                     {plan.comingSoon ? "Em breve" : "Escolher Plano"}
@@ -1620,7 +1684,9 @@ export default function Index() {
               alt="WhatsApp"
               className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 mr-2 sm:mr-3"
             />
-            <span className="hidden sm:inline">Fale comigo agora pelo WhatsApp</span>
+            <span className="hidden sm:inline">
+              Fale comigo agora pelo WhatsApp
+            </span>
             <span className="sm:hidden">Falar no WhatsApp</span>
           </Button>
 
