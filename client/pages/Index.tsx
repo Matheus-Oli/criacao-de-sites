@@ -360,7 +360,7 @@ export default function Index() {
       icon: Globe,
       title: "Sites Institucionais",
       description:
-        "Sites profissionais e completos com design moderno, responsivo e pensado para gerar confiança e resultados. Inclui páginas institucionais, formulários personalizados e integração com redes sociais.",
+        "Sites profissionais e completos com design moderno, responsivo e pensado para gerar confian��a e resultados. Inclui páginas institucionais, formulários personalizados e integração com redes sociais.",
       features: [
         "Design responsivo",
         "SEO otimizado",
@@ -454,7 +454,7 @@ export default function Index() {
       "status": "Em andamento"
     },
     {
-      name: "Portf��lio Pessoal",
+      name: "Portfólio Pessoal",
       images: ["/portfolio-pessoal/PP1.png", "/portfolio-pessoal/PP2.png", "/portfolio-pessoal/PP3.png"],
       description:
         "Portfólio profissional apresentando competências, trajetória, projetos realizados e experiências relevantes.",
@@ -1599,49 +1599,50 @@ export default function Index() {
       </section>
 
       {/* Strong CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-brand-blue via-brand-purple to-brand-blue">
+      <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-brand-blue via-brand-purple to-brand-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 sm:mb-8 leading-tight">
             Pronto para levar seu negócio ao digital?
           </h2>
 
-          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-8 sm:mb-12 max-w-2xl mx-auto">
             Transforme sua presença digital hoje mesmo. Resultados garantidos
             com tecnologia e preço justo.
           </p>
 
           <Button
             size="lg"
-            className="bg-whatsapp hover:bg-whatsapp/90 text-white px-12 py-6 text-xl rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
+            className="bg-whatsapp hover:bg-whatsapp/90 active:bg-whatsapp/80 text-white px-6 py-3 sm:px-8 sm:py-4 lg:px-12 lg:py-6 text-sm sm:text-base lg:text-xl rounded-full shadow-2xl transform hover:scale-105 active:scale-95 transition-all duration-300 touch-manipulation"
             onClick={() => window.open(whatsappUrl, "_blank")}
           >
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
               alt="WhatsApp"
-              className="w-6 h-6 mr-3"
+              className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 mr-2 sm:mr-3"
             />
-            Fale comigo agora pelo WhatsApp
+            <span className="hidden sm:inline">Fale comigo agora pelo WhatsApp</span>
+            <span className="sm:hidden">Falar no WhatsApp</span>
           </Button>
 
-          <p className="mt-6 text-white/80 text-sm">
+          <p className="mt-4 sm:mt-6 text-white/80 text-xs sm:text-sm">
             Resposta em até 2 horas • Orçamento gratuito • Sem compromisso
           </p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-brand-dark text-white py-16">
+      <footer className="bg-brand-dark text-white py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <p className="text-xl mb-8 text-white/90">
+            <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 text-white/90">
               Este site está em constante evolução — novos serviços estão
               chegando.
             </p>
 
-            <div className="flex justify-center items-center gap-8 mb-8"></div>
+            <div className="flex justify-center items-center gap-8 mb-6 sm:mb-8"></div>
 
-            <div className="border-t border-white/20 pt-8">
-              <p className="text-white/70 text-sm">
+            <div className="border-t border-white/20 pt-6 sm:pt-8">
+              <p className="text-white/70 text-xs sm:text-sm">
                 © {new Date().getFullYear()} • Desenvolvido com tecnologia
                 moderna • Todos os direitos reservados
               </p>
