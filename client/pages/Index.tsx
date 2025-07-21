@@ -254,6 +254,9 @@ export default function Index() {
     "Olá! Tenho interesse nos seus serviços digitais. Podemos conversar?";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
+  // Mobile navigation state
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   // Smooth scroll function
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -262,8 +265,23 @@ export default function Index() {
         behavior: "smooth",
         block: "start",
       });
+      // Close mobile menu after navigation
+      setIsMobileMenuOpen(false);
     }
   };
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMobileMenuOpen]);
 
   // Simple scroll animation setup
   useEffect(() => {
