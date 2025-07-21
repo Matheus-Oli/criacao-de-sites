@@ -1,14 +1,6 @@
 {
-  "builds": [
-    {
-      "src": "client/**/*",
-      "use": "@vercel/static-build",
-      "config": {
-        "buildCommand": "npm run build:client",
-        "outputDirectory": "dist/spa"
-      }
-    }
-  ],
+  "buildCommand": "npm run build:client",
+  "outputDirectory": "dist/spa",
   "routes": [
     {
       "src": "/api/(.*)",
