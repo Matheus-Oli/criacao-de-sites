@@ -864,7 +864,7 @@ export default function Index() {
       {/* About Section */}
       <section
         id="sobre"
-        className="py-24 bg-gradient-to-br from-gray-50 to-blue-50 scroll-animate"
+        className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50 scroll-animate"
         style={{
           opacity: 0,
           transform: "translateY(30px)",
@@ -872,113 +872,113 @@ export default function Index() {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-4 sm:mb-6">
               Sobre mim
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
               Desenvolvedor apaixonado por criar soluções digitais que
               transformam negócios
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left Column - Content */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
 
               {/* Main Title */}
               <div className="space-y-4">
-                <h3 className="text-3xl md:text-4xl font-bold text-brand-dark leading-tight">
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark leading-tight">
                   Criando <span className="text-brand-blue">soluções digitais</span>{" "} sob medida para negócios que querem <span className="text-brand-blue">crescer online</span>{" "}
                 </h3>
 
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  Olá! Eu sou o Matheus Oliveira, desenvolvedor focado em transformar ideias em soluções digitais funcionais e acessíveis. 
+                <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed">
+                  Olá! Eu sou o Matheus Oliveira, desenvolvedor focado em transformar ideias em soluções digitais funcionais e acessíveis.
                   Trabalho com criação de <strong>sites institucionais, landing pages e sistemas sob medida</strong>, tudo com atenção aos detalhes, visual moderno e foco no que realmente importa: resolver a necessidade de cada cliente.
                 </p>
 
-                <p className="text-gray-600 leading-relaxed">
-                  Minha missão é ajudar pequenos negócios a se posicionarem online com qualidade, proximidade e preço justo. 
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                  Minha missão é ajudar pequenos negócios a se posicionarem online com qualidade, proximidade e preço justo.
                   Tecnologia não precisa ser complicada, ela só precisa fazer sentido pra quem usa.
                 </p>
               </div>
 
               {/* Features Grid */}
-              <div className="grid grid-cols-2 gap-6">
-                <div className="flex items-center gap-3 text-gray-600">
-                  <div className="w-8 h-8 bg-brand-blue/10 rounded-full flex items-center justify-center">
-                    <Check className="w-4 h-4 text-brand-blue" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                <div className="flex items-start gap-3 text-gray-600">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-brand-blue/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 sm:w-4 sm:h-4 text-brand-blue" />
                   </div>
-                  <span className="text-sm">Sites modernos e responsivos</span>
+                  <span className="text-xs sm:text-sm">Sites modernos e responsivos</span>
                 </div>
 
-                <div className="flex items-center gap-3 text-gray-600">
-                  <div className="w-8 h-8 bg-brand-blue/10 rounded-full flex items-center justify-center">
-                    <Check className="w-4 h-4 text-brand-blue" />
+                <div className="flex items-start gap-3 text-gray-600">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-brand-blue/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 sm:w-4 sm:h-4 text-brand-blue" />
                   </div>
-                  <span className="text-sm">Atendimento direto e suporte contínuo</span>
+                  <span className="text-xs sm:text-sm">Atendimento direto e suporte contínuo</span>
                 </div>
 
-                <div className="flex items-center gap-3 text-gray-600">
-                  <div className="w-8 h-8 bg-brand-blue/10 rounded-full flex items-center justify-center">
-                    <Check className="w-4 h-4 text-brand-blue" />
+                <div className="flex items-start gap-3 text-gray-600">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-brand-blue/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 sm:w-4 sm:h-4 text-brand-blue" />
                   </div>
-                  <span className="text-sm">Otimização com foco em performance</span>
+                  <span className="text-xs sm:text-sm">Otimização com foco em performance</span>
                 </div>
 
-                <div className="flex items-center gap-3 text-gray-600">
-                  <div className="w-8 h-8 bg-brand-blue/10 rounded-full flex items-center justify-center">
-                    <Check className="w-4 h-4 text-brand-blue" />
+                <div className="flex items-start gap-3 text-gray-600">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-brand-blue/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 sm:w-4 sm:h-4 text-brand-blue" />
                   </div>
-                  <span className="text-sm">SEO técnico básico incluído</span>
+                  <span className="text-xs sm:text-sm">SEO técnico básico incluído</span>
                 </div>
 
-                <div className="flex items-center gap-3 text-gray-600">
-                  <div className="w-8 h-8 bg-brand-blue/10 rounded-full flex items-center justify-center">
-                    <Check className="w-4 h-4 text-brand-blue" />
+                <div className="flex items-start gap-3 text-gray-600">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-brand-blue/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 sm:w-4 sm:h-4 text-brand-blue" />
                   </div>
-                  <span className="text-sm">Consultoria focada no seu tipo de negócio</span>
+                  <span className="text-xs sm:text-sm">Consultoria focada no seu tipo de negócio</span>
                 </div>
 
-                <div className="flex items-center gap-3 text-gray-600">
-                  <div className="w-8 h-8 bg-brand-blue/10 rounded-full flex items-center justify-center">
-                    <Check className="w-4 h-4 text-brand-blue" />
+                <div className="flex items-start gap-3 text-gray-600">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-brand-blue/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 sm:w-4 sm:h-4 text-brand-blue" />
                   </div>
-                  <span className="text-sm">Manutenção e atualizações sob demanda</span>
+                  <span className="text-xs sm:text-sm">Manutenção e atualizações sob demanda</span>
                 </div>
               </div>
             </div>
 
             {/* Right Column - Image */}
-            <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden bg-white p-8 shadow-xl">
+            <div className="relative order-1 lg:order-2">
+              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-white p-4 sm:p-6 lg:p-8 shadow-xl">
                 <img
                   src="/public/matheus.jpg"
                   alt="Matheus Oliveira trabalhando"
-                  className="w-full h-96 object-cover rounded-2xl"
+                  className="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-xl sm:rounded-2xl"
                 />
 
                 {/* Floating Certifications Card */}
-                <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 shadow-lg">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-8 h-8 bg-brand-blue rounded-full flex items-center justify-center">
-                      <Award className="w-4 h-4 text-white" />
+                <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 border border-gray-200 shadow-lg">
+                  <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 bg-brand-blue rounded-full flex items-center justify-center">
+                      <Award className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                     </div>
-                    <h3 className="text-brand-dark font-semibold">
+                    <h3 className="text-brand-dark font-semibold text-sm sm:text-base">
                       Certificações
                     </h3>
                   </div>
-                  <p className="text-gray-600 text-sm mb-3">
+                  <p className="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3">
                     Técnico formado e qualificado
                   </p>
                   <div className="flex items-center gap-1">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <Star
                         key={star}
-                        className="w-4 h-4 text-yellow-400 fill-current"
+                        className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current"
                       />
                     ))}
-                    <span className="text-yellow-400 text-sm ml-2">5.0</span>
+                    <span className="text-yellow-400 text-xs sm:text-sm ml-1 sm:ml-2">5.0</span>
                   </div>
                 </div>
               </div>
@@ -1714,7 +1714,7 @@ export default function Index() {
           </Button>
 
           <p className="mt-6 text-white/80 text-sm">
-            Resposta em até 2 horas �� Orçamento gratuito • Sem compromisso
+            Resposta em até 2 horas • Orçamento gratuito • Sem compromisso
           </p>
         </div>
       </section>
