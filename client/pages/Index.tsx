@@ -494,7 +494,7 @@ export default function Index() {
         "Domínio .com.br incluído (1 ano)",
         "Hospedagem gratuita (1 ano)",
         "Suporte por 3 meses incluso",
-        "Suporte técnico mensal opcional (R$49/mês)",
+        "Suporte t��cnico mensal opcional (R$49/mês)",
       ],
       popular: true,
     },
@@ -1512,7 +1512,7 @@ export default function Index() {
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-blue to-brand-purple text-white px-6 py-3 rounded-full">
               <TrendingUp className="w-5 h-5" />
               <span className="font-semibold">
-                Sites institucionais a partir de R$497
+                Sites institucionais a partir de R$397
               </span>
             </div>
           </div>
