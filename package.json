@@ -2,6 +2,9 @@
   "name": "fusion-starter",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "20.x"
+  },
   "pkg": {
     "assets": [
       "dist/spa/*"
@@ -21,7 +24,11 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@vercel/node": "^2.3.0",
+    "dotenv": "^17.2.0",
     "express": "^4.18.2",
+    "nodemailer": "^7.0.5",
+    "resend": "^4.6.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
