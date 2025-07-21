@@ -689,8 +689,8 @@ export default function Index() {
             {/* Left Column - Content */}
             <div className="space-y-6 sm:space-y-8 lg:pr-8 text-center lg:text-left">
               <div className="space-y-4 sm:space-y-6">
-                <Badge className="inline-flex items-center bg-gradient-to-r from-brand-blue/10 to-brand-purple/10 text-brand-dark border-brand-blue/20 px-3 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-medium shadow-lg backdrop-blur-sm">
-                  <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-yellow-500" />
+                <Badge className="inline-flex items-center bg-gradient-to-r from-brand-blue to-brand-purple text-white border-brand-blue/20 px-3 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-medium shadow-lg backdrop-blur-sm">
+                  <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-yellow-300" />
                   Mais barato que o mercado
                 </Badge>
 
@@ -903,7 +903,7 @@ export default function Index() {
 
                 <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                   Minha missão é ajudar pequenos negócios a se posicionarem online com qualidade, proximidade e preço justo.
-                  Tecnologia não precisa ser complicada, ela só precisa fazer sentido pra quem usa.
+                  Tecnologia n��o precisa ser complicada, ela só precisa fazer sentido pra quem usa.
                 </p>
               </div>
 
