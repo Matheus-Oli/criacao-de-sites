@@ -753,8 +753,8 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Right Column - Creative Visual */}
-            <div className="relative lg:block hidden">
+            {/* Right Column - Creative Visual - Hidden on mobile, simplified on tablet */}
+            <div className="relative hidden lg:block">
               <div className="relative max-w-lg mx-auto">
                 {/* Main Feature Cards Stack */}
                 <div className="relative space-y-6">
@@ -1714,7 +1714,7 @@ export default function Index() {
           </Button>
 
           <p className="mt-6 text-white/80 text-sm">
-            Resposta em até 2 horas • Orçamento gratuito • Sem compromisso
+            Resposta em até 2 horas �� Orçamento gratuito • Sem compromisso
           </p>
         </div>
       </section>
