@@ -405,46 +405,49 @@ export default function Index() {
 
   const projects = [
     {
-      name: "Sistema BarberShop Pro",
-      images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
+      name: "Sistema Pedal Cicle",
+      images: ["/pedal-cicle/PC3.png", "/pedal-cicle/PC1.png", "/pedal-cicle/PC2.png"],
       description:
-        "Sistema completo de controle de estoque e agendamento para barbearia",
+        "Sistema completo para gestão de estoque e vendas, com dashboards interativos, geração de relatórios detalhados e exportação de dados para Excel.",
       category: "Sistema Web",
-      technologies: ["React", "Node.js", "PostgreSQL"],
+      technologies: ["React", "Node.js", "Supabase"],
       features: [
-        "Agendamento online",
+        "Dashboard de produtos e vendas",
         "Controle de estoque",
         "Relatórios financeiros",
       ],
       status: "Concluído",
     },
     {
-      name: "Landing Page Imobiliária",
-      images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
+      "name": "Landing Page Pedal Cicle",
+      "images": ["/pedal-cicle/PC4.png", "/pedal-cicle/PC5.png", "/pedal-cicle/PC6.png"],
+      "description": "Landing page moderna e responsiva para apresentação de serviços e produtos, com foco em captura de leads, integração com formuláriose monitoramento de analytics.",
+      "category": "Landing Page",
+      "technologies": ["React", "Tailwind", "TypeScript"],
+      "features": [
+        "Design responsivo otimizado para múltiplos dispositivos",
+        "Formulários integrados para captura de leads",
+        "Análise de dados e performance via ferramentas de analytics"
+      ],
+      "status": "Em andamento"
+    },
+    {
+      name: "Portfólio Pessoal",
+      images: ["/portfolio-pessoal/PP1.png", "/portfolio-pessoal/PP2.png", "/portfolio-pessoal/PP3.png"],
       description:
-        "Página de vendas para lançamento de empreendimento residencial",
-      category: "Landing Page",
-      technologies: ["React", "Tailwind", "TypeScript"],
-      features: ["Design responsivo", "Formulários integrados", "Analytics"],
+        "Portfólio profissional apresentando competências, trajetória, projetos realizados e experiências relevantes.",
+      category: "Portfólio Profissional",
+      technologies: ["React", "Vite"],
+      features: ["Apresentação de projetos", "Links para redes sociais e contato", "Design moderno e condizente"],
       status: "Concluído",
     },
     {
-      name: "Site Restaurante Gourmet",
-      images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
-      description:
-        "Site institucional com cardápio digital e sistema de reservas",
+      name: "Site Institucional Conexao 31",
+      images: ["/conexao-31/C3.png", "/conexao-31/C1.png", "/conexao-31/C2.png"],
+      description: "Site institucional completo com formulário, envio de email, captura de leads, responsividade e chamativo, trazendo uma experiência relevante para os usuários.",
       category: "Site Institucional",
-      technologies: ["React", "Strapi", "MySQL"],
-      features: ["Cardápio digital", "Sistema de reservas", "Galeria de fotos"],
-      status: "Concluído",
-    },
-    {
-      name: "E-commerce Fashion",
-      images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
-      description: "Loja virtual completa com integração de pagamentos",
-      category: "E-commerce",
-      technologies: ["Next.js", "Stripe", "MongoDB"],
-      features: ["Carrinho de compras", "Pagamentos online", "Painel admin"],
+      technologies: ["React", "Vite", "Resend"],
+      features: ["Formulário funcional", "Captura de leads", "Projeto personalizavel"],
       status: "Concluído",
     },
   ];
