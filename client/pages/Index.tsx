@@ -253,7 +253,7 @@ const ProjectModal = ({
 };
 
 export default function Index() {
-  const whatsappNumber = "5511999999999"; // Replace with actual WhatsApp number
+  const whatsappNumber = "5527981709551"; // Replace with actual WhatsApp number
   const whatsappMessage =
     "Olá! Tenho interesse nos seus serviços digitais. Podemos conversar?";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
