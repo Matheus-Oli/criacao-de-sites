@@ -946,7 +946,7 @@ export default function Index() {
                 <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                   Minha missão é ajudar pequenos negócios a se posicionarem
                   online com qualidade, proximidade e preço justo. Tecnologia
-                  n��o precisa ser complicada, ela só precisa fazer sentido pra
+                  não precisa ser complicada, ela só precisa fazer sentido pra
                   quem usa.
                 </p>
               </div>
