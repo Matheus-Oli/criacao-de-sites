@@ -591,10 +591,10 @@ export default function Index() {
               </button>
             </nav>
 
-            {/* Mobile menu button */}
+            {/* Mobile menu button - positioned absolutely to the right */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-md text-gray-700 hover:text-brand-blue hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-blue"
+              className="absolute right-0 lg:hidden p-2 rounded-md text-gray-700 hover:text-brand-blue hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-blue"
               aria-label="Toggle mobile menu"
               aria-expanded={isMobileMenuOpen}
             >
