@@ -1336,7 +1336,7 @@ export default function Index() {
                 </div>
               </div>
               <p className="text-gray-600 text-sm">
-                Certificação em análise de dados web e otimização de performance
+                Certificação em análise de dados web e otimiza��ão de performance
                 de sites.
               </p>
             </div>
@@ -1534,10 +1534,18 @@ export default function Index() {
                     {plan.name}
                   </CardTitle>
                   <div className="mb-4">
-                    <span className="text-4xl font-bold text-brand-blue">
-                      R${plan.price}
-                    </span>
-                    <span className="text-gray-600 ml-2">à vista</span>
+                    {plan.comingSoon ? (
+                      <span className="text-4xl font-bold text-gray-500">
+                        {plan.price}
+                      </span>
+                    ) : (
+                      <>
+                        <span className="text-4xl font-bold text-brand-blue">
+                          R${plan.price}
+                        </span>
+                        <span className="text-gray-600 ml-2">à vista</span>
+                      </>
+                    )}
                   </div>
                   <p className="text-gray-600">{plan.description}</p>
                 </CardHeader>
