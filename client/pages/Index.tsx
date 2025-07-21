@@ -1336,7 +1336,7 @@ export default function Index() {
                 </div>
               </div>
               <p className="text-gray-600 text-sm">
-                Certificação em análise de dados web e otimiza��ão de performance
+                Certificação em análise de dados web e otimização de performance
                 de sites.
               </p>
             </div>
@@ -1559,10 +1559,17 @@ export default function Index() {
                   ))}
 
                   <Button
-                    className={`w-full mt-6 ${plan.popular ? "bg-gradient-to-r from-brand-blue to-brand-purple hover:shadow-lg" : "bg-gray-100 text-gray-700 hover:bg-gray-200"} transition-all duration-200`}
-                    onClick={() => window.open(whatsappUrl, "_blank")}
+                    className={`w-full mt-6 ${
+                      plan.comingSoon
+                        ? "bg-gray-400 text-gray-600 cursor-not-allowed"
+                        : plan.popular
+                        ? "bg-gradient-to-r from-brand-blue to-brand-purple hover:shadow-lg"
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                    } transition-all duration-200`}
+                    onClick={() => !plan.comingSoon && window.open(whatsappUrl, "_blank")}
+                    disabled={plan.comingSoon}
                   >
-                    Escolher Plano
+                    {plan.comingSoon ? "Em breve" : "Escolher Plano"}
                   </Button>
                 </CardContent>
               </Card>
