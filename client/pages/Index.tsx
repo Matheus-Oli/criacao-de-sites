@@ -665,33 +665,33 @@ export default function Index() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-[90vh] flex items-center">
+      <section className="relative overflow-hidden min-h-[85vh] sm:min-h-[90vh] flex items-center pt-4 sm:pt-8">
         {/* Animated Background Pattern */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-purple-50/50"></div>
 
-          {/* Floating Geometric Shapes */}
-          <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 rounded-3xl rotate-12"></div>
-          <div className="absolute top-40 right-32 w-24 h-24 bg-gradient-to-br from-brand-purple/15 to-brand-blue/15 rounded-full"></div>
-          <div className="absolute bottom-40 left-40 w-16 h-16 bg-gradient-to-br from-brand-blue/20 to-brand-purple/20 rounded-2xl rotate-45"></div>
-          <div className="absolute bottom-20 right-20 w-20 h-20 bg-gradient-to-br from-brand-purple/10 to-brand-blue/10 rounded-full"></div>
+          {/* Floating Geometric Shapes - Responsive positioning */}
+          <div className="absolute top-10 left-4 sm:top-20 sm:left-20 w-16 h-16 sm:w-32 sm:h-32 bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 rounded-2xl sm:rounded-3xl rotate-12"></div>
+          <div className="absolute top-20 right-8 sm:top-40 sm:right-32 w-12 h-12 sm:w-24 sm:h-24 bg-gradient-to-br from-brand-purple/15 to-brand-blue/15 rounded-full"></div>
+          <div className="absolute bottom-32 left-8 sm:bottom-40 sm:left-40 w-8 h-8 sm:w-16 sm:h-16 bg-gradient-to-br from-brand-blue/20 to-brand-purple/20 rounded-xl sm:rounded-2xl rotate-45"></div>
+          <div className="absolute bottom-10 right-4 sm:bottom-20 sm:right-20 w-10 h-10 sm:w-20 sm:h-20 bg-gradient-to-br from-brand-purple/10 to-brand-blue/10 rounded-full"></div>
 
           {/* Grid Pattern */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] opacity-50 sm:opacity-100"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left Column - Content */}
-            <div className="space-y-8 lg:pr-8">
-              <div className="space-y-6">
-                <Badge className="inline-flex items-center bg-gradient-to-r from-brand-blue/10 to-brand-purple/10 text-white border-brand-blue/20 px-6 py-3 text-sm font-medium shadow-lg backdrop-blur-sm">
-                  <Star className="w-4 h-4 mr-2 text-yellow-500" />
+            <div className="space-y-6 sm:space-y-8 lg:pr-8 text-center lg:text-left">
+              <div className="space-y-4 sm:space-y-6">
+                <Badge className="inline-flex items-center bg-gradient-to-r from-brand-blue/10 to-brand-purple/10 text-brand-dark border-brand-blue/20 px-3 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-medium shadow-lg backdrop-blur-sm">
+                  <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-yellow-500" />
                   Mais barato que o mercado
                 </Badge>
 
-                <div className="space-y-6">
-                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                <div className="space-y-4 sm:space-y-6">
+                  <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                     <span className="block text-brand-dark">Seu negócio</span>
                     <span className="block text-brand-dark">
                       no digital com
@@ -702,35 +702,35 @@ export default function Index() {
                     </span>
                   </h1>
 
-                  <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl">
+                  <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                     Criação de sites, sistemas e páginas para transformar a
                     presença digital do seu negócio
                   </p>
                 </div>
 
-                <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                  <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
-                    <Clock className="w-4 h-4 text-brand-blue" />
+                <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-6 text-xs sm:text-sm text-gray-600">
+                  <div className="flex items-center gap-2 sm:gap-3 bg-white/60 backdrop-blur-sm px-3 py-2 sm:px-4 sm:py-2 rounded-full shadow-sm">
+                    <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-brand-blue flex-shrink-0" />
                     <span>Entrega rápida</span>
                   </div>
-                  <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+                  <div className="flex items-center gap-2 sm:gap-3 bg-white/60 backdrop-blur-sm px-3 py-2 sm:px-4 sm:py-2 rounded-full shadow-sm">
                     <img
                       src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2Fcf4a28f9586f4e19a291c587dc7d9a75?format=webp&width=800"
                       alt="WhatsApp"
-                      className="w-5 h-5"
+                      className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0"
                     />
                     <span>Suporte direto</span>
                   </div>
-                  <div className="flex items-center gap-3 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
-                    <Star className="w-4 h-4 text-yellow-500" />
+                  <div className="flex items-center gap-2 sm:gap-3 bg-white/60 backdrop-blur-sm px-3 py-2 sm:px-4 sm:py-2 rounded-full shadow-sm">
+                    <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-500 flex-shrink-0" />
                     <span>Pagamento facilitado</span>
                   </div>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 justify-center lg:justify-start">
                 <Button
-                  className="bg-whatsapp hover:bg-whatsapp/90 text-white px-6 py-2 text-base rounded-full shadow-md transform hover:scale-105 transition-all duration-300 font-medium"
+                  className="bg-whatsapp hover:bg-whatsapp/90 active:bg-whatsapp/80 text-white px-4 py-3 sm:px-6 sm:py-3 text-sm sm:text-base rounded-full shadow-md transform hover:scale-105 active:scale-95 transition-all duration-300 font-medium touch-manipulation"
                   onClick={() => window.open(whatsappUrl, "_blank")}
                 >
                   <img
@@ -744,9 +744,10 @@ export default function Index() {
                 <Button
                   variant="outline"
                   onClick={() => scrollToSection("portfolio")}
-                  className="px-6 py-2 text-base rounded-full border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white transition-all duration-300 bg-white/80 backdrop-blur-sm"
+                  className="px-4 py-3 sm:px-6 sm:py-3 text-sm sm:text-base rounded-full border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white active:bg-brand-blue/90 transition-all duration-300 bg-white/80 backdrop-blur-sm touch-manipulation"
                 >
-                  Veja exemplos de projetos
+                  <span className="hidden sm:inline">Veja exemplos de projetos</span>
+                  <span className="sm:hidden">Ver projetos</span>
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </div>
