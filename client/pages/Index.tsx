@@ -1013,9 +1013,10 @@ export default function Index() {
             <div className="relative order-1 lg:order-2">
               <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-white p-4 sm:p-6 lg:p-8 shadow-xl">
                 <img
-                  src="/matheus.jpg"
+                  src="/teste.jpg"
                   alt="Matheus Oliveira trabalhando"
-                  className="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-xl sm:rounded-2xl"
+                  className="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-xl sm:rounded-2xl object-top"
+                  style={{ objectPosition: 'center 18%' }}
                 />
 
                 {/* Floating Certifications Card */}
