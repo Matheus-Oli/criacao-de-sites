@@ -454,7 +454,7 @@ export default function Index() {
       "status": "Em andamento"
     },
     {
-      name: "Portfólio Pessoal",
+      name: "Portf��lio Pessoal",
       images: ["/portfolio-pessoal/PP1.png", "/portfolio-pessoal/PP2.png", "/portfolio-pessoal/PP3.png"],
       description:
         "Portfólio profissional apresentando competências, trajetória, projetos realizados e experiências relevantes.",
@@ -1493,7 +1493,7 @@ export default function Index() {
       {/* Pricing Plans Section */}
       <section
         id="planos"
-        className="py-24 bg-white scroll-animate"
+        className="py-16 sm:py-20 lg:py-24 bg-white scroll-animate"
         style={{
           opacity: 0,
           transform: "translateY(30px)",
@@ -1501,22 +1501,22 @@ export default function Index() {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-4">
               Sites Institucionais
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto mb-6">
               Planos especializados em sites institucionais para empresas
             </p>
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-blue to-brand-purple text-white px-6 py-3 rounded-full">
-              <TrendingUp className="w-5 h-5" />
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-blue to-brand-purple text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full text-sm sm:text-base">
+              <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5" />
               <span className="font-semibold">
-                Sites institucionais a partir de R$397
+                <span className="hidden sm:inline">Sites institucionais a partir de </span>R$397
               </span>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
             {plans.map((plan, index) => (
               <Card
                 key={index}
