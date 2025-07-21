@@ -1660,18 +1660,23 @@ export default function Index() {
         />
       )}
 
-      {/* Floating WhatsApp Button */}
-      <div className="fixed bottom-6 right-6 z-50">
+      {/* Floating WhatsApp Button - Mobile Optimized */}
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
         <Button
           onClick={() => window.open(whatsappUrl, "_blank")}
-          className="w-16 h-16 bg-whatsapp hover:bg-whatsapp/90 text-white rounded-full shadow-lg p-0 border-4 border-white"
+          className="w-14 h-14 sm:w-16 sm:h-16 bg-whatsapp hover:bg-whatsapp/90 active:bg-whatsapp/80 text-white rounded-full shadow-lg p-0 border-2 sm:border-4 border-white touch-manipulation transform hover:scale-105 active:scale-95 transition-all duration-200"
+          aria-label="Entrar em contato via WhatsApp"
         >
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
             alt="WhatsApp"
-            className="w-8 h-8 rounded-full object-cover"
+            className="w-6 h-6 sm:w-8 sm:h-8 rounded-full object-cover"
+            loading="lazy"
           />
         </Button>
+
+        {/* Mobile-only pulsing animation */}
+        <div className="absolute inset-0 bg-whatsapp rounded-full animate-ping opacity-20 sm:hidden"></div>
       </div>
     </div>
   );
