@@ -53,19 +53,21 @@ const ProjectCarousel = ({
       <img
         src={images[currentIndex]}
         alt={`${projectName} - Imagem ${currentIndex + 1}`}
-        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer"
+        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer touch-manipulation"
         onClick={() => onImageClick(currentIndex)}
+        loading="lazy"
       />
 
-      {/* Navigation arrows */}
+      {/* Navigation arrows - Always visible on mobile */}
       <button
         onClick={(e) => {
           e.stopPropagation();
           prevImage();
         }}
-        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"
+        className="absolute left-1 sm:left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-1.5 sm:p-2 rounded-full opacity-70 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 z-20 touch-manipulation"
+        aria-label="Imagem anterior"
       >
-        <ArrowRight className="w-4 h-4 rotate-180" />
+        <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 rotate-180" />
       </button>
 
       <button
@@ -73,13 +75,14 @@ const ProjectCarousel = ({
           e.stopPropagation();
           nextImage();
         }}
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"
+        className="absolute right-1 sm:right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-1.5 sm:p-2 rounded-full opacity-70 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 z-20 touch-manipulation"
+        aria-label="Próxima imagem"
       >
-        <ArrowRight className="w-4 h-4" />
+        <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
       </button>
 
       {/* Dots indicator */}
-      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1 z-20">
+      <div className="absolute bottom-1 sm:bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1 z-20">
         {images.map((_, index) => (
           <button
             key={index}
@@ -87,9 +90,10 @@ const ProjectCarousel = ({
               e.stopPropagation();
               setCurrentIndex(index);
             }}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+            className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 touch-manipulation ${
               index === currentIndex ? "bg-white" : "bg-white/50"
             }`}
+            aria-label={`Ir para imagem ${index + 1}`}
           />
         ))}
       </div>
