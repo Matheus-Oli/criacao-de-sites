@@ -536,58 +536,131 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-sm border-b border-gray-200/50 sticky top-0 z-50">
+      <header className="bg-white/90 backdrop-blur-sm border-b border-gray-200/50 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center h-16 relative">
-            {/* Logo - positioned absolutely to the left */}
-            <div className="absolute left-0 flex flex-row items-center">
-              <img src="/favicon.ico" className="w-12 h-12" alt="Logo" />
-              <h1 className="text-xl font-bold bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent self-center">
-                atheus Oliveira
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <div className="flex flex-row items-center">
+              <img src="/favicon.ico" className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" alt="Matheus Oliveira Logo" />
+              <h1 className="text-sm sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-brand-blue to-brand-purple bg-clip-text text-transparent ml-2">
+                <span className="hidden xs:inline">M</span>atheus Oliveira
               </h1>
             </div>
 
-
-            {/* Navigation - centered */}
-            <nav className="flex space-x-8">
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex space-x-6 xl:space-x-8">
               <button
                 onClick={() => scrollToSection("sobre")}
-                className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium"
+                className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium text-sm xl:text-base"
               >
                 Sobre mim
               </button>
               <button
                 onClick={() => scrollToSection("servicos")}
-                className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium"
+                className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium text-sm xl:text-base"
               >
                 Serviços
               </button>
               <button
                 onClick={() => scrollToSection("diferenciais")}
-                className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium"
+                className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium text-sm xl:text-base"
               >
                 Diferenciais
               </button>
               <button
                 onClick={() => scrollToSection("certificacoes")}
-                className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium"
+                className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium text-sm xl:text-base"
               >
                 Certificações
               </button>
               <button
                 onClick={() => scrollToSection("portfolio")}
-                className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium"
+                className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium text-sm xl:text-base"
               >
                 Portfólio
               </button>
               <button
                 onClick={() => scrollToSection("planos")}
-                className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium"
+                className="text-gray-700 hover:text-brand-blue transition-colors duration-200 font-medium text-sm xl:text-base"
               >
                 Planos
               </button>
             </nav>
+
+            {/* Mobile menu button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden p-2 rounded-md text-gray-700 hover:text-brand-blue hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-blue"
+              aria-label="Toggle mobile menu"
+              aria-expanded={isMobileMenuOpen}
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
           </div>
+
+          {/* Mobile Navigation Menu */}
+          {isMobileMenuOpen && (
+            <div className="lg:hidden absolute top-16 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-lg animate-in slide-in-from-top-2 duration-200">
+              <nav className="px-4 py-6 space-y-2 max-h-[80vh] overflow-y-auto">
+                <button
+                  onClick={() => scrollToSection("sobre")}
+                  className="block w-full text-left py-3 px-4 text-gray-700 hover:text-brand-blue hover:bg-blue-50 active:bg-blue-100 transition-colors duration-200 font-medium rounded-lg touch-manipulation"
+                >
+                  Sobre mim
+                </button>
+                <button
+                  onClick={() => scrollToSection("servicos")}
+                  className="block w-full text-left py-3 px-4 text-gray-700 hover:text-brand-blue hover:bg-blue-50 active:bg-blue-100 transition-colors duration-200 font-medium rounded-lg touch-manipulation"
+                >
+                  Serviços
+                </button>
+                <button
+                  onClick={() => scrollToSection("diferenciais")}
+                  className="block w-full text-left py-3 px-4 text-gray-700 hover:text-brand-blue hover:bg-blue-50 active:bg-blue-100 transition-colors duration-200 font-medium rounded-lg touch-manipulation"
+                >
+                  Diferenciais
+                </button>
+                <button
+                  onClick={() => scrollToSection("certificacoes")}
+                  className="block w-full text-left py-3 px-4 text-gray-700 hover:text-brand-blue hover:bg-blue-50 active:bg-blue-100 transition-colors duration-200 font-medium rounded-lg touch-manipulation"
+                >
+                  Certificações
+                </button>
+                <button
+                  onClick={() => scrollToSection("portfolio")}
+                  className="block w-full text-left py-3 px-4 text-gray-700 hover:text-brand-blue hover:bg-blue-50 active:bg-blue-100 transition-colors duration-200 font-medium rounded-lg touch-manipulation"
+                >
+                  Portfólio
+                </button>
+                <button
+                  onClick={() => scrollToSection("planos")}
+                  className="block w-full text-left py-3 px-4 text-gray-700 hover:text-brand-blue hover:bg-blue-50 active:bg-blue-100 transition-colors duration-200 font-medium rounded-lg touch-manipulation"
+                >
+                  Planos
+                </button>
+                <div className="pt-4 border-t border-gray-200 mt-4">
+                  <Button
+                    className="w-full bg-whatsapp hover:bg-whatsapp/90 active:bg-whatsapp/80 text-white px-4 py-3 text-base rounded-lg shadow-md transition-all duration-300 font-medium touch-manipulation"
+                    onClick={() => {
+                      window.open(whatsappUrl, "_blank");
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
+                      alt="WhatsApp"
+                      className="w-4 h-4 mr-2"
+                    />
+                    Fale comigo no WhatsApp
+                  </Button>
+                </div>
+              </nav>
+            </div>
+          )}
         </div>
       </header>
 
