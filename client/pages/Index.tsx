@@ -990,7 +990,7 @@ export default function Index() {
       {/* Services Section */}
       <section
         id="servicos"
-        className="py-24 bg-white scroll-animate"
+        className="py-16 sm:py-20 lg:py-24 bg-white scroll-animate"
         style={{
           opacity: 0,
           transform: "translateY(30px)",
@@ -998,223 +998,129 @@ export default function Index() {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold text-brand-dark mb-6">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-4 sm:mb-6">
               Serviços que Transformam
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
               Soluções digitais completas para levar seu negócio ao próximo
               nível
             </p>
           </div>
 
-          {/* First row - 3 cards */}
-          <div className="flex justify-center mb-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl">
-              {services.slice(0, 3).map((service, index) => (
-                <div
-                  key={index}
-                  className={`group relative bg-white rounded-3xl p-8 border border-gray-100 hover:border-brand-blue/30 transition-all duration-300 flex flex-col h-full ${
-                    service.comingSoon
-                      ? "opacity-70 cursor-not-allowed"
-                      : "cursor-pointer hover:shadow-xl hover:-translate-y-2"
-                  }`}
-                  onClick={() =>
-                    !service.comingSoon && handleServiceClick(service.title)
-                  }
-                >
-                  {/* Service Icon */}
-                  <div className="relative mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <service.icon className="w-8 h-8 text-brand-blue group-hover:text-brand-purple transition-colors duration-300" />
-                    </div>
-                    {service.popular && (
-                      <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-brand-blue to-brand-purple text-white px-3 py-1">
-                        Popular
-                      </Badge>
-                    )}
-                    {service.comingSoon && (
-                      <Badge className="absolute -top-2 -right-2 bg-yellow-500 text-white px-3 py-1">
-                        Em Breve
-                      </Badge>
-                    )}
+          {/* Services Grid - Mobile-first responsive */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 lg:mb-12">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className={`group relative bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-gray-100 hover:border-brand-blue/30 transition-all duration-300 flex flex-col h-full touch-manipulation ${
+                  service.comingSoon
+                    ? "opacity-70 cursor-not-allowed"
+                    : "cursor-pointer hover:shadow-xl active:shadow-lg hover:-translate-y-1 sm:hover:-translate-y-2 active:translate-y-0"
+                }`}
+                onClick={() =>
+                  !service.comingSoon && handleServiceClick(service.title)
+                }
+              >
+                {/* Service Icon */}
+                <div className="relative mb-4 sm:mb-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 rounded-xl sm:rounded-2xl flex items-center justify-center group-hover:scale-110 group-active:scale-105 transition-transform duration-300">
+                    <service.icon className="w-6 h-6 sm:w-8 sm:h-8 text-brand-blue group-hover:text-brand-purple transition-colors duration-300" />
                   </div>
-
-                  {/* Service Title */}
-                  <h3 className="text-xl font-bold text-brand-dark mb-3 group-hover:text-brand-blue transition-colors duration-300">
-                    {service.title}
-                  </h3>
-
-                  {/* Service Description */}
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">
-                    {service.description}
-                  </p>
-
-                  {/* Features List */}
-                  <div className="space-y-2 mb-6">
-                    {service.features
-                      .slice(0, 3)
-                      .map((feature, featureIndex) => (
-                        <div
-                          key={featureIndex}
-                          className="flex items-center gap-2 text-sm text-gray-600"
-                        >
-                          <Check className="w-4 h-4 text-whatsapp flex-shrink-0" />
-                          <span>{feature}</span>
-                        </div>
-                      ))}
-                  </div>
-
-                  {/* CTA Button - Fixed at bottom with 16px margin */}
-                  <div className="mt-auto" style={{ marginBottom: "16px" }}>
-                    <Button
-                      className={`w-full rounded-xl transition-all duration-300 ${
-                        service.comingSoon
-                          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                          : "bg-brand-blue hover:bg-brand-purple text-white group-hover:shadow-lg"
-                      }`}
-                      disabled={service.comingSoon}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        if (!service.comingSoon) {
-                          handleServiceClick(service.title);
-                        }
-                      }}
-                    >
-                      <img
-                        src={
-                          service.comingSoon
-                            ? "https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2Fcf4a28f9586f4e19a291c587dc7d9a75?format=webp&width=800"
-                            : "https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
-                        }
-                        alt="WhatsApp"
-                        className="w-4 h-4 mr-2"
-                      />
-                      {service.comingSoon ? "Em Breve" : "Contratar"}
-                    </Button>
-                  </div>
-
-                  {/* Hover Gradient Border */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-blue via-brand-purple to-brand-blue opacity-0 group-hover:opacity-20 transition-opacity duration-300 -z-10"></div>
+                  {service.popular && (
+                    <Badge className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 bg-gradient-to-r from-brand-blue to-brand-purple text-white px-2 py-1 sm:px-3 sm:py-1 text-xs">
+                      Popular
+                    </Badge>
+                  )}
+                  {service.comingSoon && (
+                    <Badge className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 bg-yellow-500 text-white px-2 py-1 sm:px-3 sm:py-1 text-xs">
+                      Em Breve
+                    </Badge>
+                  )}
                 </div>
-              ))}
-            </div>
-          </div>
 
-          {/* Second row - 2 cards centered */}
-          <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl">
-              {services.slice(3, 6).map((service, index) => (
-                <div
-                  key={index + 3}
-                  className={`group relative bg-white rounded-3xl p-8 border border-gray-100 hover:border-brand-blue/30 transition-all duration-300 flex flex-col h-full ${
-                    service.comingSoon
-                      ? "opacity-70 cursor-not-allowed"
-                      : "cursor-pointer hover:shadow-xl hover:-translate-y-2"
-                  }`}
-                  onClick={() =>
-                    !service.comingSoon && handleServiceClick(service.title)
-                  }
-                >
-                  {/* Service Icon */}
-                  <div className="relative mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-brand-blue/10 to-brand-purple/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <service.icon className="w-8 h-8 text-brand-blue group-hover:text-brand-purple transition-colors duration-300" />
-                    </div>
-                    {service.popular && (
-                      <Badge className="absolute -top-2 -right-2 bg-gradient-to-r from-brand-blue to-brand-purple text-white px-3 py-1">
-                        Popular
-                      </Badge>
-                    )}
-                    {service.comingSoon && (
-                      <Badge className="absolute -top-2 -right-2 bg-yellow-500 text-white px-3 py-1">
-                        Em Breve
-                      </Badge>
-                    )}
-                  </div>
+                {/* Service Title */}
+                <h3 className="text-lg sm:text-xl font-bold text-brand-dark mb-2 sm:mb-3 group-hover:text-brand-blue transition-colors duration-300">
+                  {service.title}
+                </h3>
 
-                  {/* Service Title */}
-                  <h3 className="text-xl font-bold text-brand-dark mb-3 group-hover:text-brand-blue transition-colors duration-300">
-                    {service.title}
-                  </h3>
+                {/* Service Description */}
+                <p className="text-gray-600 text-sm leading-relaxed mb-4 sm:mb-6 flex-1">
+                  {service.description}
+                </p>
 
-                  {/* Service Description */}
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">
-                    {service.description}
-                  </p>
-
-                  {/* Features List */}
-                  <div className="space-y-2 mb-6">
-                    {service.features
-                      .slice(0, 3)
-                      .map((feature, featureIndex) => (
-                        <div
-                          key={featureIndex}
-                          className="flex items-center gap-2 text-sm text-gray-600"
-                        >
-                          <Check className="w-4 h-4 text-whatsapp flex-shrink-0" />
-                          <span>{feature}</span>
-                        </div>
-                      ))}
-                  </div>
-
-                  {/* CTA Button - Fixed at bottom with 16px margin */}
-                  <div className="mt-auto" style={{ marginBottom: "16px" }}>
-                    <Button
-                      className={`w-full rounded-xl transition-all duration-300 ${
-                        service.comingSoon
-                          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                          : "bg-brand-blue hover:bg-brand-purple text-white group-hover:shadow-lg"
-                      }`}
-                      disabled={service.comingSoon}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        if (!service.comingSoon) {
-                          handleServiceClick(service.title);
-                        }
-                      }}
-                    >
-                      <img
-                        src={
-                          service.comingSoon
-                            ? "https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2Fcf4a28f9586f4e19a291c587dc7d9a75?format=webp&width=800"
-                            : "https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
-                        }
-                        alt="WhatsApp"
-                        className="w-4 h-4 mr-2"
-                      />
-                      {service.comingSoon ? "Em Breve" : "Contratar"}
-                    </Button>
-                  </div>
-
-                  {/* Hover Gradient Border */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-blue via-brand-purple to-brand-blue opacity-0 group-hover:opacity-20 transition-opacity duration-300 -z-10"></div>
+                {/* Features List */}
+                <div className="space-y-2 mb-4 sm:mb-6">
+                  {service.features
+                    .slice(0, 3)
+                    .map((feature, featureIndex) => (
+                      <div
+                        key={featureIndex}
+                        className="flex items-start gap-2 text-xs sm:text-sm text-gray-600"
+                      >
+                        <Check className="w-3 h-3 sm:w-4 sm:h-4 text-whatsapp flex-shrink-0 mt-0.5" />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
                 </div>
-              ))}
-            </div>
+
+                {/* CTA Button */}
+                <div className="mt-auto">
+                  <Button
+                    className={`w-full rounded-lg sm:rounded-xl transition-all duration-300 py-2.5 sm:py-3 text-sm sm:text-base touch-manipulation ${
+                      service.comingSoon
+                        ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                        : "bg-brand-blue hover:bg-brand-purple active:bg-brand-purple/90 text-white group-hover:shadow-lg active:shadow-md"
+                    }`}
+                    disabled={service.comingSoon}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (!service.comingSoon) {
+                        handleServiceClick(service.title);
+                      }
+                    }}
+                  >
+                    <img
+                      src={
+                        service.comingSoon
+                          ? "https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2Fcf4a28f9586f4e19a291c587dc7d9a75?format=webp&width=800"
+                          : "https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2F77d1d20784d044eebc6da2c26251256e?format=webp&width=800"
+                      }
+                      alt="WhatsApp"
+                      className="w-3 h-3 sm:w-4 sm:h-4 mr-2"
+                    />
+                    {service.comingSoon ? "Em Breve" : "Contratar"}
+                  </Button>
+                </div>
+
+                {/* Hover Gradient Border */}
+                <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-brand-blue via-brand-purple to-brand-blue opacity-0 group-hover:opacity-20 transition-opacity duration-300 -z-10"></div>
+              </div>
+            ))}
           </div>
 
           {/* Bottom CTA */}
-          <div className="mt-20 text-center bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl p-12">
-            <h3 className="text-2xl font-bold text-brand-dark mb-4">
+          <div className="mt-12 sm:mt-16 lg:mt-20 text-center bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12">
+            <h3 className="text-xl sm:text-2xl font-bold text-brand-dark mb-3 sm:mb-4">
               Precisa de algo personalizado?
             </h3>
-            <p className="text-gray-600 mb-8 max-w-md mx-auto">
+            <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 max-w-md mx-auto">
               Criamos soluções sob medida para necessidades específicas do seu
               negócio
             </p>
             <Button
               variant="outline"
               size="lg"
-              className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white px-8 py-3 rounded-full transition-all duration-300"
+              className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white active:bg-brand-blue/90 px-6 py-3 sm:px-8 sm:py-3 rounded-full transition-all duration-300 touch-manipulation text-sm sm:text-base"
               onClick={() => window.open(whatsappUrl, "_blank")}
             >
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F516abc652f6f499f9918c14a2c7d6dd1%2Fcf4a28f9586f4e19a291c587dc7d9a75?format=webp&width=800"
                 alt="WhatsApp"
-                className="w-8 h-8 mr-2"
+                className="w-6 h-6 sm:w-8 sm:h-8 mr-2"
               />
-              Conversar no WhatsApp
+              <span className="hidden sm:inline">Conversar no WhatsApp</span>
+              <span className="sm:hidden">Conversar</span>
             </Button>
           </div>
         </div>
