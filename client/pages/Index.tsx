@@ -481,7 +481,7 @@ export default function Index() {
       ],
     },
     {
-      name: "🚀 Site Profissional",
+      name: "Site Profissional",
       price: "697",
       description: "Para empresas que querem uma presença forte e completa na internet.",
       features: [
@@ -494,12 +494,12 @@ export default function Index() {
         "Domínio .com.br incluído (1 ano)",
         "Hospedagem gratuita (1 ano)",
         "Suporte por 3 meses incluso",
-        "Suporte t��cnico mensal opcional (R$49/mês)",
+        "Suporte técnico mensal opcional (R$49/mês)",
       ],
       popular: true,
     },
     {
-      name: "🚧 Site Avançado",
+      name: "Site Avançado",
       price: "Em breve",
       description: "Para empresas que precisam de funcionalidades mais robustas e exclusivas.",
       features: [
