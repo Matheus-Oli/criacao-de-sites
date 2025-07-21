@@ -1387,9 +1387,6 @@ export default function Index() {
             <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
               Exemplos de soluções criadas para diferentes segmentos
             </p>
-            <Badge variant="outline" className="text-sm text-gray-500">
-              Projetos fictícios criados para demonstração
-            </Badge>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
