@@ -530,7 +530,7 @@ export default function Index() {
     },
     {
       name: "Site Profissional",
-      price: "697",
+      price: "797",
       description:
         "Para empresas que querem uma presença forte e completa na internet.",
       features: [
